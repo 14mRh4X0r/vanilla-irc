@@ -11,14 +11,14 @@ task downloadMinecraft {
   outputs.file "lib/minecraft_server.${mc_version}.jar"
   
   doLast {
-    outputs.files.singleFile.mkdirs()
+    outputs.files.singleFile.parentFile.mkdirs()
     ant.get src: "https://s3.amazonaws.com/Minecraft.Download/versions/${mc_version}/minecraft_server.${mc_version}.jar", dest: "lib"
   }
 }
 
-compileJava.dependsOn downloadMinecraft
-
 dependencies {
   compile 'org.pircbotx:pircbotx:2.0.1'
-  compile files("lib/minecraft_server.${mc_version}.jar")
+  compile files("lib/minecraft_server.${mc_version}.jar") {
+    builtBy downloadMinecraft
+  }
 }

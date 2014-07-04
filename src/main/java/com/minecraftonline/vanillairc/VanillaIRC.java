@@ -17,10 +17,26 @@
 
 package com.minecraftonline.vanillairc;
 
+import com.google.gson.Gson;
+import java.io.FileReader;
+import java.io.IOException;
 import net.minecraft.server.MinecraftServer;
+import org.pircbotx.Configuration;
+import org.pircbotx.Configuration.Builder;
+import org.pircbotx.PircBotX;
+import org.pircbotx.exception.IrcException;
+import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
 
 public class VanillaIRC {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, IrcException {
+        Configuration<PircBotX> conf = getConfiguration();
+        PircBotX bot = new PircBotX(conf);
         MinecraftServer.main(args);
+    }
+
+    @SuppressWarnings("unchecked")
+    private static Configuration<PircBotX> getConfiguration() throws IOException {
+        return ((Builder<PircBotX>) new Gson().fromJson(new FileReader("ircbot.json"),
+                ParameterizedTypeImpl.make(Builder.class, new Class<?>[]{PircBotX.class}, null))).buildConfiguration();
     }
 }
