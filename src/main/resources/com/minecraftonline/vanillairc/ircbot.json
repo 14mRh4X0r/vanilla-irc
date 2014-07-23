@@ -1,0 +1,23 @@
+{
+  "bot_config": {
+    "web_irc_enabled": false,
+    "name": "MyVanillaBot",
+    "login": "VanillaIRC",
+    "real_name": "Vanilla IRC 0.1 by 14mRh4X0r",
+    "server_hostname": "irc.server",
+    "auto_join_channels": {
+      "#example": "",
+      "#super-secret": "with-key"
+    },
+    "nickserv_password": null,
+    "auto_reconnect": true
+  },
+  "prefix": ".",
+  "privmsg_format": [
+    {"text": "[IRC] <{user}> ", "color": "gray"},
+    {"text": "{message}", "color": "white"}
+  ],
+  "action_format": [
+    {"text": "[IRC] * {user} {message}", "color": "gray"}
+  ]
+}

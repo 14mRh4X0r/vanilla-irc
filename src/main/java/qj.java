@@ -4,6 +4,8 @@ import com.google.common.base.Charsets;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.minecraftonline.vanillairc.ChatHandler;
+import com.minecraftonline.vanillairc.VanillaIRC;
 import com.mojang.authlib.GameProfile;
 import java.io.File;
 import java.net.SocketAddress;
@@ -722,15 +724,27 @@ public abstract class qj {
 
     }
 
+    // VanillaIRC start -- redirect for chat injection
     public void a(go var1, boolean var2) {
-        this.j.a(var1);
-        int var3 = var2 ? 1 : 0;
+        this.sendMessageToPlayers(var1, var2);
 
-        this.a((hb) (new hw(var1, (byte) var3)));
-
-        // TODO: hook
-        String translated = var1.e();
+        String translated = var1.c();
+        ChatHandler ch = VanillaIRC.getHandler();
+        if (ch != null) {
+            ch.handleGameMessage(translated);
+        }
     }
+
+    private void sendMessageToPlayers(go message, boolean serverMessage) {
+        this.j.a(message);
+        int type = serverMessage ? 1 : 0;
+
+        this.a((hb) (new hw(message, (byte) type)));
+    }
+
+    public void sendFromJson(String json) {
+        this.sendMessageToPlayers(gp.a(json), false);
+    } // VanillaIRC end
 
     public void a(go var1) {
         this.a(var1, true);

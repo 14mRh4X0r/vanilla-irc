@@ -17,26 +17,72 @@
 
 package com.minecraftonline.vanillairc;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import lombok.Getter;
 import net.minecraft.server.MinecraftServer;
-import org.pircbotx.Configuration;
-import org.pircbotx.Configuration.Builder;
 import org.pircbotx.PircBotX;
-import org.pircbotx.exception.IrcException;
-import sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VanillaIRC {
-    public static void main(String[] args) throws IOException, IrcException {
-        Configuration<PircBotX> conf = getConfiguration();
-        PircBotX bot = new PircBotX(conf);
-        MinecraftServer.main(args);
+    @Getter(lazy=true) private static final Config config = getConfig0();
+    private static final Logger log = LoggerFactory.getLogger(VanillaIRC.class);
+    public static final String CONFIG_FILE = "ircbot.json";
+    @Getter public static ChatHandler handler;
+
+    private static Config getConfig0() {
+        Config localConfig = null;
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .create();
+        try {
+            localConfig = gson.fromJson(new FileReader(CONFIG_FILE), Config.class);
+        } catch (FileNotFoundException e) {
+            try {
+                Files.copy(VanillaIRC.class.getResourceAsStream(CONFIG_FILE), Paths.get(CONFIG_FILE));
+                log.warn("Configuration file \"{}\" did not exist, initialized with defaults", CONFIG_FILE);
+            } catch (IOException ioe) {
+                log.error("Configuration file did not exist and could not write defaults", ioe);
+            }
+            System.exit(1);
+        } catch (JsonParseException e) {
+            log.error("Error while parsing config", e);
+        }
+        return localConfig;
     }
 
-    @SuppressWarnings("unchecked")
-    private static Configuration<PircBotX> getConfiguration() throws IOException {
-        return ((Builder<PircBotX>) new Gson().fromJson(new FileReader("ircbot.json"),
-                ParameterizedTypeImpl.make(Builder.class, new Class<?>[]{PircBotX.class}, null))).buildConfiguration();
+    public static void main(String[] args) throws IOException {
+        PircBotX bot = new PircBotX(getConfig().getConfiguration());
+        handler = new ChatHandler(bot);
+        bot.getConfiguration().getListenerManager().addListener(handler);
+
+        @SuppressWarnings({"TooBroadCatch", "BroadCatchBlock", "UseSpecificCatch"})
+        Thread botThread = new Thread(() -> {
+            try {
+                bot.startBot();
+            } catch (Exception e) {
+                log.warn("Exception in IRC thread", e);
+            }
+        }, "IRC bot");
+        botThread.start();
+
+        // No GUI by default
+        List<String> argsList = new ArrayList<>(Arrays.asList(args));
+        if (!argsList.remove("--gui") && !argsList.contains("--nogui")) {
+            argsList.add("--nogui");
+        }
+        MinecraftServer.main(argsList.toArray(new String[0]));
     }
 }
