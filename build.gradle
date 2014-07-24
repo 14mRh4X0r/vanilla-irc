@@ -11,11 +11,11 @@ apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'retrolambda'
 
+ext.mc_version = '14w26c'
+
 archivesBaseName = 'vanilla-irc'
 group = 'com.minecraftonline'
-version = '0.1'
-
-ext.mc_version = '14w26c'
+version = "0.1-${mc_version}"
 
 repositories {
   mavenCentral()
