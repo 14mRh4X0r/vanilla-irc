@@ -11,7 +11,7 @@ apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'retrolambda'
 
-ext.mc_version = '14w26c'
+ext.mc_version = '14w30b'
 
 archivesBaseName = 'vanilla-irc'
 group = 'com.minecraftonline'
