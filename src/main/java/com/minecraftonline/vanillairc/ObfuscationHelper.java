@@ -28,12 +28,12 @@ import net.minecraft.server.MinecraftServer;
 public class ObfuscationHelper {
     public static String getPlayersString() {
         MinecraftServer mcs = MinecraftServer.L();
-        List<?> players = mcs.ak().e;
+        List<?> players = mcs.al().e;
         return MessageFormat.format("{0,choice,0#No players|1#1 player|1<{0} players} online{0,choice,0#.|0<: {1}}",
-                                    players.size(), mcs.ak().f());
+                                    players.size(), mcs.al().f());
     }
 
     public static void sendMessageFromJson(String json) {
-        MinecraftServer.L().ak().sendFromJson(json);
+        MinecraftServer.L().al().sendFromJson(json);
     }
 }
