@@ -17,6 +17,7 @@
 
 package com.minecraftonline.vanillairc;
 
+import org.pircbotx.Channel;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.ActionEvent;
@@ -63,6 +64,8 @@ public class ChatHandler extends ListenerAdapter<PircBotX> {
     }
 
     public void handleGameMessage(String translated) {
-        bot.getUserChannelDao().getAllChannels().forEach((chan) -> chan.send().message(translated));
+        for (Channel chan : bot.getUserChannelDao().getAllChannels()) {
+            chan.send().message(translated);
+        }
     }
 }
