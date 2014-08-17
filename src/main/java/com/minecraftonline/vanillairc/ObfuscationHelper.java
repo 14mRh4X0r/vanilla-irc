@@ -22,18 +22,18 @@ import java.util.List;
 import net.minecraft.server.MinecraftServer;
 
 /**
- *
- * @author willem
+ * Utility class to help with obfuscated method calls.
+ * @author Willem Mulder
  */
 public class ObfuscationHelper {
     public static String getPlayersString() {
-        MinecraftServer mcs = MinecraftServer.L();
-        List<?> players = mcs.am().e;
+        MinecraftServer mcs = MinecraftServer.M();
+        List<?> players = mcs.an().e;
         return MessageFormat.format("{0,choice,0#No players|1#1 player|1<{0} players} online{0,choice,0#.|0<: {1}}",
-                                    players.size(), mcs.am().f());
+                                    players.size(), mcs.an().f());
     }
 
     public static void sendMessageFromJson(String json) {
-        MinecraftServer.L().am().sendFromJson(json);
+        MinecraftServer.M().an().sendFromJson(json);
     }
 }
