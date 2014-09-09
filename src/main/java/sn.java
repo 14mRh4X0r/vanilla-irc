@@ -58,11 +58,11 @@ public abstract class sn {
     private final sp m;
     private final sx n;
     private final Map o;
-    private bri p;
+    private brl p;
     private boolean q;
     protected int g;
     private int r;
-    private aqz s;
+    private arc s;
     private boolean t;
     private int u;
 
@@ -87,7 +87,7 @@ public abstract class sn {
         var4.a(var3);
         fn var7 = this.a(var2);
 
-        var2.a((aqr) this.j.a(var2.am));
+        var2.a((aqu) this.j.a(var2.am));
         var2.c.a((qt) var2.o);
         String var8 = "local";
 
@@ -97,13 +97,13 @@ public abstract class sn {
 
         h.info(var2.d_() + "[" + var8 + "] logged in with entity id " + var2.F() + " at (" + var2.s + ", " + var2.t + ", " + var2.u + ")");
         qt var9 = this.j.a(var2.am);
-        bql var10 = var9.P();
+        bqo var10 = var9.P();
         dt var11 = var9.M();
 
         this.a(var2, (qw) null, var9);
         rj var12 = new rj(this.j, var1, var2);
 
-        var12.a((id) (new jw(var2.F(), var2.c.b(), var10.t(), var9.t.r(), var9.aa(), this.q(), var10.u(), var9.Q().b("reducedDebugInfo"))));
+        var12.a((id) (new jw(var2.F(), var2.c.b(), var10.t(), var9.t.q(), var9.aa(), this.q(), var10.u(), var9.Q().b("reducedDebugInfo"))));
         var12.a((id) (new ji("MC|Brand", (new hd(Unpooled.buffer())).a(this.c().getServerModName()))));
         var12.a((id) (new ix(var10.y(), var10.z())));
         var12.a((id) (new lh(var11)));
@@ -145,7 +145,7 @@ public abstract class sn {
 
         var2.f_();
         if (var7 != null && var7.b("Riding", 10)) {
-            wv var16 = xb.a(var7.m("Riding"), (aqr) var9);
+            wv var16 = xb.a(var7.m("Riding"), (aqu) var9);
 
             if (var16 != null) {
                 var16.n = true;
@@ -162,13 +162,13 @@ public abstract class sn {
         Iterator var4 = var1.g().iterator();
 
         while (var4.hasNext()) {
-            brw var5 = (brw) var4.next();
+            brz var5 = (brz) var4.next();
 
             var2.a.a((id) (new le(var5, 0)));
         }
 
         for (int var9 = 0; var9 < 19; ++var9) {
-            brv var10 = var1.a(var9);
+            bry var10 = var1.a(var9);
 
             if (var10 != null && !var3.contains(var10)) {
                 List var6 = var1.d(var10);
@@ -188,7 +188,7 @@ public abstract class sn {
 
     public void a(qt[] var1) {
         this.p = var1[0].O().e();
-        var1[0].af().a((bew) (new so(this)));
+        var1[0].af().a((bez) (new so(this)));
     }
 
     public void a(qw var1, qt var2) {
@@ -299,7 +299,7 @@ public abstract class sn {
     }
 
     public qw f(GameProfile var1) {
-        UUID var2 = aha.a(var1);
+        UUID var2 = ahd.a(var1);
         ArrayList var3 = Lists.newArrayList();
 
         qw var5;
@@ -350,7 +350,7 @@ public abstract class sn {
         qw var7 = new qw(this.j, this.j.a(var1.am), var1.cc(), (qx) var6);
 
         var7.a = var1.a;
-        var7.a((aha) var1, var3);
+        var7.a((ahd) var1, var3);
         var7.d(var1.F());
         var7.o(var1);
         qt var8 = this.j.a(var1.am);
@@ -359,7 +359,7 @@ public abstract class sn {
         dt var9;
 
         if (var4 != null) {
-            var9 = aha.a(this.j.a(var1.am), var4, var5);
+            var9 = ahd.a(this.j.a(var1.am), var4, var5);
             if (var9 != null) {
                 var7.b((double) ((float) var9.n() + 0.5F), (double) ((float) var9.o() + 0.1F), (double) ((float) var9.p() + 0.5F), 0.0F, 0.0F);
                 var7.a(var4, var5);
@@ -469,7 +469,7 @@ public abstract class sn {
             var3.B.b();
         }
 
-        var1.a((aqr) var4);
+        var1.a((aqu) var4);
     }
 
     public void e() {
@@ -498,8 +498,8 @@ public abstract class sn {
 
     }
 
-    public void a(aha var1, ho var2) {
-        bsc var3 = var1.bN();
+    public void a(ahd var1, ho var2) {
+        bsf var3 = var1.bN();
 
         if (var3 != null) {
             Collection var4 = var3.d();
@@ -517,8 +517,8 @@ public abstract class sn {
         }
     }
 
-    public void b(aha var1, ho var2) {
-        bsc var3 = var1.bN();
+    public void b(ahd var1, ho var2) {
+        bsf var3 = var1.bN();
 
         if (var3 == null) {
             this.a(var2);
@@ -609,10 +609,10 @@ public abstract class sn {
     }
 
     public void a(double var1, double var3, double var5, double var7, int var9, id var10) {
-        this.a((aha) null, var1, var3, var5, var7, var9, var10);
+        this.a((ahd) null, var1, var3, var5, var7, var9, var10);
     }
 
-    public void a(aha var1, double var2, double var4, double var6, double var8, int var10, id var11) {
+    public void a(ahd var1, double var2, double var4, double var6, double var8, int var10, id var11) {
         for (int var12 = 0; var12 < this.e.size(); ++var12) {
             qw var13 = (qw) this.e.get(var12);
 
@@ -663,7 +663,7 @@ public abstract class sn {
     public void a() {}
 
     public void b(qw var1, qt var2) {
-        bey var3 = this.j.c[0].af();
+        bfb var3 = this.j.c[0].af();
 
         var1.a.a((id) (new kr(var3, kt.d)));
         var1.a.a((id) (new li(var2.K(), var2.L(), var2.Q().b("doDaylightCycle"))));
@@ -728,7 +728,7 @@ public abstract class sn {
         return null;
     }
 
-    private void a(qw var1, qw var2, aqr var3) {
+    private void a(qw var1, qw var2, aqu var3) {
         if (var2 != null) {
             var1.c.a(var2.c.b());
         } else if (this.s != null) {
@@ -771,7 +771,7 @@ public abstract class sn {
         this.a(var1, true);
     }
 
-    public tp a(aha var1) {
+    public tp a(ahd var1) {
         UUID var2 = var1.aJ();
         tp var3 = var2 == null ? null : (tp) this.o.get(var2);
 

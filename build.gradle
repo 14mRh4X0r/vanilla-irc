@@ -12,7 +12,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'retrolambda'
 
 ext.base_version = '0.1.1'
-ext.mc_version = '14w34b'
+ext.mc_version = '1.8'
 
 archivesBaseName = 'vanilla-irc'
 group = 'com.minecraftonline'
