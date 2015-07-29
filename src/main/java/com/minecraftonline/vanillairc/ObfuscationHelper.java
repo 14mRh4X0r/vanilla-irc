@@ -18,7 +18,6 @@
 package com.minecraftonline.vanillairc;
 
 import java.text.MessageFormat;
-import java.util.List;
 import net.minecraft.server.MinecraftServer;
 
 /**
@@ -27,13 +26,12 @@ import net.minecraft.server.MinecraftServer;
  */
 public class ObfuscationHelper {
     public static String getPlayersString() {
-        MinecraftServer mcs = MinecraftServer.M();
-        List<?> players = mcs.an().e;
+        MinecraftServer mcs = MinecraftServer.N();
         return MessageFormat.format("{0,choice,0#No players|1#1 player|1<{0} players} online{0,choice,0#.|0<: {1}}",
-                                    players.size(), mcs.an().f());
+                                    mcs.ap().o(), mcs.ap().b(false));
     }
 
     public static void sendMessageFromJson(String json) {
-        MinecraftServer.M().an().sendFromJson(json);
+        MinecraftServer.N().ap().sendFromJson(json);
     }
 }

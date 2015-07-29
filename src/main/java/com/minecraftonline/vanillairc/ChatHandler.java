@@ -17,6 +17,7 @@
 
 package com.minecraftonline.vanillairc;
 
+import com.google.gson.Gson;
 import org.pircbotx.Channel;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.ListenerAdapter;
@@ -31,6 +32,11 @@ public class ChatHandler extends ListenerAdapter<PircBotX> {
     private final PircBotX bot;
     private final Config config = VanillaIRC.getConfig();
 
+    private static String jsonEscape(String str) {
+        String json = new Gson().toJson(str);
+        return json.substring(1, json.length() - 1);
+    }
+
     public ChatHandler(PircBotX bot) {
         this.bot = bot;
     }
@@ -38,8 +44,8 @@ public class ChatHandler extends ListenerAdapter<PircBotX> {
     @Override
     public void onAction(ActionEvent<PircBotX> event) throws Exception {
         String formatted = config.getActionFormatString()
-                .replace("{user}", event.getUser().getNick())
-                .replace("{message}", event.getMessage());
+                .replace("{user}", jsonEscape(event.getUser().getNick()))
+                .replace("{message}", jsonEscape(event.getMessage()));
         ObfuscationHelper.sendMessageFromJson(formatted);
     }
 
@@ -57,8 +63,8 @@ public class ChatHandler extends ListenerAdapter<PircBotX> {
             }
         } else {
             String formatted = config.getPrivmsgFormatString()
-                    .replace("{user}", event.getUser().getNick())
-                    .replace("{message}", message);
+                    .replace("{user}", jsonEscape(event.getUser().getNick()))
+                    .replace("{message}", jsonEscape(message));
             ObfuscationHelper.sendMessageFromJson(formatted);
         }
     }
