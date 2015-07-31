@@ -58,11 +58,11 @@ public abstract class lz {
     private final ma m;
     private final mg n;
     private final Map<UUID, mx> o;
-    private avx p;
+    private avy p;
     private boolean q;
     protected int e;
     private int r;
-    private aeq.a s; // VanillaIRC -- faulty decompilation: aeq -> aeq.a
+    private aer.a s; // VanillaIRC -- faulty decompilation: aer -> aer.a
     private boolean t;
     private int u;
 
@@ -87,7 +87,7 @@ public abstract class lz {
         var4.a(var3);
         dn var7 = this.a(var2);
 
-        var2.a((aen) this.h.a(var2.am));
+        var2.a((aeo) this.h.a(var2.am));
         var2.c.a((lg) var2.o);
         String var8 = "local";
 
@@ -97,7 +97,7 @@ public abstract class lz {
 
         f.info(var2.e_() + "[" + var8 + "] logged in with entity id " + var2.F() + " at (" + var2.s + ", " + var2.t + ", " + var2.u + ")");
         lg var9 = this.h.a(var2.am);
-        avn var10 = var9.Q();
+        avo var10 = var9.Q();
         cj var11 = var9.N();
 
         this.a(var2, (lh) null, var9);
@@ -150,7 +150,7 @@ public abstract class lz {
 
         var2.g_();
         if (var7 != null && var7.b("Riding", 10)) {
-            pr var17 = pt.a(var7.n("Riding"), (aen) var9);
+            pr var17 = pt.a(var7.n("Riding"), (aeo) var9);
 
             if (var17 != null) {
                 var17.n = true;
@@ -167,13 +167,13 @@ public abstract class lz {
         Iterator var4 = var1.g().iterator();
 
         while (var4.hasNext()) {
-            awk var5 = (awk) var4.next();
+            awl var5 = (awl) var4.next();
 
             var2.a.a((ff) (new hr(var5, 0)));
         }
 
         for (int var9 = 0; var9 < 19; ++var9) {
-            awj var10 = var1.a(var9);
+            awk var10 = var1.a(var9);
 
             if (var10 != null && !var3.contains(var10)) {
                 List var6 = var1.d(var10);
@@ -193,30 +193,30 @@ public abstract class lz {
 
     public void a(lg[] var1) {
         this.p = var1[0].P().e();
-        var1[0].ag().a(new aoc() {
-            public void a(aoe var1, double var2) {
+        var1[0].ag().a(new aod() {
+            public void a(aof var1, double var2) {
                 lz.this.a((ff) (new hg(var1, hg.a.a))); // VanillaIRC -- faulty decompilation: hg -> hg.a
             }
 
-            public void a(aoe var1, double var2, double var4, long var6) {
+            public void a(aof var1, double var2, double var4, long var6) {
                 lz.this.a((ff) (new hg(var1, hg.a.b))); // VanillaIRC -- faulty decompilation: hg -> hg.a
             }
 
-            public void a(aoe var1, double var2, double var4) {
+            public void a(aof var1, double var2, double var4) {
                 lz.this.a((ff) (new hg(var1, hg.a.c))); // VanillaIRC -- faulty decompilation: hg -> hg.a
             }
 
-            public void a(aoe var1, int var2) {
+            public void a(aof var1, int var2) {
                 lz.this.a((ff) (new hg(var1, hg.a.e))); // VanillaIRC -- faulty decompilation: hg -> hg.a
             }
 
-            public void b(aoe var1, int var2) {
+            public void b(aof var1, int var2) {
                 lz.this.a((ff) (new hg(var1, hg.a.f))); // VanillaIRC -- faulty decompilation: hg -> hg.a
             }
 
-            public void b(aoe var1, double var2) {}
+            public void b(aof var1, double var2) {}
 
-            public void c(aoe var1, double var2) {}
+            public void c(aof var1, double var2) {}
         });
     }
 
@@ -511,7 +511,7 @@ public abstract class lz {
             var3.B.b();
         }
 
-        var1.a((aen) var4);
+        var1.a((aeo) var4);
     }
 
     public void e() {
@@ -541,7 +541,7 @@ public abstract class lz {
     }
 
     public void a(xa var1, eu var2) {
-        awp var3 = var1.bP();
+        awq var3 = var1.bP();
 
         if (var3 != null) {
             Collection var4 = var3.d();
@@ -560,7 +560,7 @@ public abstract class lz {
     }
 
     public void b(xa var1, eu var2) {
-        awp var3 = var1.bP();
+        awq var3 = var1.bP();
 
         if (var3 == null) {
             this.a(var2);
@@ -722,7 +722,7 @@ public abstract class lz {
     public void a() {}
 
     public void b(lh var1, lg var2) {
-        aoe var3 = this.h.d[0].ag();
+        aof var3 = this.h.d[0].ag();
 
         var1.a.a((ff) (new hg(var3, hg.a.d))); // VanillaIRC -- faulty decompilation: hg -> hg.a
         var1.a.a((ff) (new hu(var2.L(), var2.M(), var2.R().b("doDaylightCycle"))));
@@ -787,7 +787,7 @@ public abstract class lz {
         return null;
     }
 
-    private void a(lh var1, lh var2, aen var3) {
+    private void a(lh var1, lh var2, aeo var3) {
         if (var2 != null) {
             var1.c.a(var2.c.b());
         } else if (this.s != null) {

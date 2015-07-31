@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'java'
 
 ext.base_version = '0.1.2'
-ext.mc_version = '15w31b'
+ext.mc_version = '15w31c'
 
 archivesBaseName = 'vanilla-irc'
 group = 'com.minecraftonline'
