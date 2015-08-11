@@ -97,13 +97,13 @@ public abstract class lz {
 
         f.info(var2.e_() + "[" + var8 + "] logged in with entity id " + var2.F() + " at (" + var2.s + ", " + var2.t + ", " + var2.u + ")");
         lg var9 = this.h.a(var2.am);
-        aws var10 = var9.R();
-        cj var11 = var9.O();
+        aws var10 = var9.S();
+        cj var11 = var9.P();
 
         this.a(var2, (lh) null, var9);
         lo var12 = new lo(this.h, var1, var2);
 
-        var12.a((ff) (new gt(var2.F(), var2.c.b(), var10.s(), var9.t.p().a(), var9.ac(), this.p(), var10.t(), var9.S().b("reducedDebugInfo"))));
+        var12.a((ff) (new gt(var2.F(), var2.c.b(), var10.s(), var9.t.p().a(), var9.ad(), this.p(), var10.t(), var9.T().b("reducedDebugInfo"))));
         var12.a((ff) (new gh("MC|Brand", (new em(Unpooled.buffer())).a(this.c().getServerModName()))));
         var12.a((ff) (new fx(var10.x(), var10.y())));
         var12.a((ff) (new ht(var11)));
@@ -111,12 +111,12 @@ public abstract class lz {
         var12.a((ff) (new hi(var2.bp.d)));
         int var13 = this.h(var3) ? this.m.a(var3) : 0;
 
-        var13 = this.h.V() && this.h.d[0].R().u() ? 4 : var13;
+        var13 = this.h.V() && this.h.d[0].S().u() ? 4 : var13;
         var13 = this.t ? 4 : var13;
         this.b(var2, var13);
         var2.A().d();
         var2.A().b(var2);
-        this.a((kl) var9.ab(), var2);
+        this.a((kl) var9.ac(), var2);
         this.h.aJ();
         fb var14;
 
@@ -192,8 +192,8 @@ public abstract class lz {
     }
 
     public void a(lg[] var1) {
-        this.p = var1[0].Q().e();
-        var1[0].ah().a(new apg() {
+        this.p = var1[0].R().e();
+        var1[0].ai().a(new apg() {
             public void a(api var1, double var2) {
                 lz.this.a((ff) (new hg(var1, hg.a.a))); // VanillaIRC -- faulty decompilation: hg -> hg.a
             }
@@ -236,7 +236,7 @@ public abstract class lz {
     }
 
     public dn a(lh var1) {
-        dn var2 = this.h.d[0].R().h();
+        dn var2 = this.h.d[0].S().h();
         dn var3;
 
         if (var1.e_().equals(this.h.U()) && var2 != null) {
@@ -416,8 +416,8 @@ public abstract class lz {
             var7.b(var7.s, var7.t + 1.0D, var7.u);
         }
 
-        var7.a.a((ff) (new he(var7.am, var7.o.ac(), var7.o.R().t(), var7.c.b())));
-        var9 = var8.O();
+        var7.a.a((ff) (new he(var7.am, var7.o.ad(), var7.o.S().t(), var7.c.b())));
+        var9 = var8.P();
         var7.a.a(var7.s, var7.t, var7.u, var7.y, var7.z);
         var7.a.a((ff) (new ht(var9)));
         var7.a.a((ff) (new ho(var7.bK, var7.bJ, var7.bI)));
@@ -438,7 +438,7 @@ public abstract class lz {
         var1.am = var2;
         lg var5 = this.h.a(var1.am);
 
-        var1.a.a((ff) (new he(var1.am, var1.o.ac(), var1.o.R().t(), var1.c.b())));
+        var1.a.a((ff) (new he(var1.am, var1.o.ad(), var1.o.S().t(), var1.c.b())));
         var4.f(var1);
         var1.I = false;
         this.a(var1, var3, var4, var5);
@@ -465,15 +465,15 @@ public abstract class lz {
 
         var3.B.a("moving");
         if (var1.am == -1) {
-            var5 = nu.a(var5 / var9, var4.ah().b() + 16.0D, var4.ah().d() - 16.0D);
-            var7 = nu.a(var7 / var9, var4.ah().c() + 16.0D, var4.ah().e() - 16.0D);
+            var5 = nu.a(var5 / var9, var4.ai().b() + 16.0D, var4.ai().d() - 16.0D);
+            var7 = nu.a(var7 / var9, var4.ai().c() + 16.0D, var4.ai().e() - 16.0D);
             var1.b(var5, var1.t, var7, var1.y, var1.z);
             if (var1.aj()) {
                 var3.a(var1, false);
             }
         } else if (var1.am == 0) {
-            var5 = nu.a(var5 * var9, var4.ah().b() + 16.0D, var4.ah().d() - 16.0D);
-            var7 = nu.a(var7 * var9, var4.ah().c() + 16.0D, var4.ah().e() - 16.0D);
+            var5 = nu.a(var5 * var9, var4.ai().b() + 16.0D, var4.ai().d() - 16.0D);
+            var7 = nu.a(var7 * var9, var4.ai().c() + 16.0D, var4.ai().e() - 16.0D);
             var1.b(var5, var1.t, var7, var1.y, var1.z);
             if (var1.aj()) {
                 var3.a(var1, false);
@@ -482,7 +482,7 @@ public abstract class lz {
             cj var12;
 
             if (var2 == 1) {
-                var12 = var4.O();
+                var12 = var4.P();
             } else {
                 var12 = var4.n();
             }
@@ -648,7 +648,7 @@ public abstract class lz {
     }
 
     public boolean h(GameProfile var1) {
-        return this.m.d(var1) || this.h.V() && this.h.d[0].R().u() && this.h.U().equalsIgnoreCase(var1.getName()) || this.t;
+        return this.m.d(var1) || this.h.V() && this.h.d[0].S().u() && this.h.U().equalsIgnoreCase(var1.getName()) || this.t;
     }
 
     public lh a(String var1) {
@@ -722,11 +722,11 @@ public abstract class lz {
     public void a() {}
 
     public void b(lh var1, lg var2) {
-        api var3 = this.h.d[0].ah();
+        api var3 = this.h.d[0].ai();
 
         var1.a.a((ff) (new hg(var3, hg.a.d))); // VanillaIRC -- faulty decompilation: hg -> hg.a
-        var1.a.a((ff) (new hu(var2.M(), var2.N(), var2.S().b("doDaylightCycle"))));
-        if (var2.U()) {
+        var1.a.a((ff) (new hu(var2.N(), var2.O(), var2.T().b("doDaylightCycle"))));
+        if (var2.V()) {
             var1.a.a((ff) (new gm(1, 0.0F)));
             var1.a.a((ff) (new gm(7, var2.j(1.0F))));
             var1.a.a((ff) (new gm(8, var2.h(1.0F))));
@@ -749,7 +749,7 @@ public abstract class lz {
     }
 
     public String[] q() {
-        return this.h.d[0].Q().e().f();
+        return this.h.d[0].R().e().f();
     }
 
     public boolean r() {
@@ -794,7 +794,7 @@ public abstract class lz {
             var1.c.a(this.s);
         }
 
-        var1.c.b(var3.R().q());
+        var1.c.b(var3.S().q());
     }
 
     public void u() {
@@ -835,7 +835,7 @@ public abstract class lz {
         mx var3 = var2 == null ? null : (mx) this.o.get(var2);
 
         if (var3 == null) {
-            File var4 = new File(this.h.a(0).Q().b(), "stats");
+            File var4 = new File(this.h.a(0).R().b(), "stats");
             File var5 = new File(var4, var2.toString() + ".json");
 
             if (!var5.exists()) {
