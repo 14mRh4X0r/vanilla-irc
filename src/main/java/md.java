@@ -79,7 +79,7 @@ public abstract class md {
     }
 
     public void a(ek var1, ll var2) {
-        GameProfile var3 = var2.cl();
+        GameProfile var3 = var2.cj();
         lz var4 = this.h.aH();
         GameProfile var5 = var4.a(var3.getId());
         String var6 = var5 == null ? var3.getName() : var5.getName();
@@ -376,8 +376,8 @@ public abstract class md {
         var1.u().v().c(var1);
         this.i.remove(var1);
         this.h.a(var1.am).f(var1);
-        cj var4 = var1.cp();
-        boolean var5 = var1.cq();
+        cj var4 = var1.cn();
+        boolean var5 = var1.co();
 
         var1.am = var2;
         Object var6;
@@ -388,7 +388,7 @@ public abstract class md {
             var6 = new lm(this.h.a(var1.am));
         }
 
-        ll var7 = new ll(this.h, this.h.a(var1.am), var1.cl(), (lm) var6);
+        ll var7 = new ll(this.h, this.h.a(var1.am), var1.cj(), (lm) var6);
 
         var7.a = var1.a;
         var7.a((ys) var1, var3);
@@ -625,7 +625,7 @@ public abstract class md {
         GameProfile[] var1 = new GameProfile[this.i.size()];
 
         for (int var2 = 0; var2 < this.i.size(); ++var2) {
-            var1[var2] = ((ll) this.i.get(var2)).cl();
+            var1[var2] = ((ll) this.i.get(var2)).cj();
         }
 
         return var1;
