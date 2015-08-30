@@ -58,7 +58,7 @@ public abstract class me {
     private final mf m;
     private final ml n;
     private final Map<UUID, nc> o;
-    private ayb p;
+    private ayf p;
     private boolean q;
     protected int e;
     private int r;
@@ -97,7 +97,7 @@ public abstract class me {
 
         f.info(var2.e_() + "[" + var8 + "] logged in with entity id " + var2.G() + " at (" + var2.r + ", " + var2.s + ", " + var2.t + ")");
         lk var9 = this.h.a(var2.al);
-        axs var10 = var9.R();
+        axw var10 = var9.R();
         cj var11 = var9.O();
 
         this.a(var2, (lm) null, var9);
@@ -167,13 +167,13 @@ public abstract class me {
         Iterator var4 = var1.g().iterator();
 
         while (var4.hasNext()) {
-            ayo var5 = (ayo) var4.next();
+            ays var5 = (ays) var4.next();
 
             var2.a.a((ff) (new hs(var5, 0)));
         }
 
         for (int var9 = 0; var9 < 19; ++var9) {
-            ayn var10 = var1.a(var9);
+            ayr var10 = var1.a(var9);
 
             if (var10 != null && !var3.contains(var10)) {
                 List var6 = var1.d(var10);
@@ -558,7 +558,7 @@ public abstract class me {
     }
 
     public void a(yt var1, eu var2) {
-        ayt var3 = var1.aE();
+        ayx var3 = var1.aE();
 
         if (var3 != null) {
             Collection var4 = var3.d();
@@ -577,7 +577,7 @@ public abstract class me {
     }
 
     public void b(yt var1, eu var2) {
-        ayt var3 = var1.aE();
+        ayx var3 = var1.aE();
 
         if (var3 == null) {
             this.a(var2);
