@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 MinecraftOnline
+ * Copyright (C) 2014-2015 MinecraftOnline
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -17,21 +17,54 @@
 
 package com.minecraftonline.vanillairc;
 
+import java.lang.reflect.Method;
 import java.text.MessageFormat;
-import net.minecraft.server.MinecraftServer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility class to help with obfuscated method calls.
  * @author Willem Mulder
  */
 public class ObfuscationHelper {
+    private static final Logger log = LoggerFactory.getLogger(ObfuscationHelper.class);
+    private static Object loginManager;
+    private static Method getPlayerCount;
+    private static Method getPlayersString;
+    private static Method sendFromJson;
+
+    public static void setLoginManager(Object manager, Class clazz) {
+        loginManager = manager;
+
+        try {
+            getPlayerCount = clazz.getDeclaredMethod("o");
+            getPlayersString = clazz.getDeclaredMethod("b", boolean.class);
+            sendFromJson = clazz.getDeclaredMethod("sendFromJson", String.class);
+        } catch (NoSuchMethodException e) {
+            log.error("LoginManager methods not found", e);
+        }
+    }
+
     public static String getPlayersString() {
-        MinecraftServer mcs = MinecraftServer.P();
+        int players = 0;
+        String playerList = "";
+
+        try {
+            players = (Integer) getPlayerCount.invoke(loginManager);
+            playerList = (String) getPlayersString.invoke(loginManager, false);
+        } catch (ReflectiveOperationException e) {
+            log.error("Could not retrieve player list", e);
+        }
+
         return MessageFormat.format("{0,choice,0#No players|1#1 player|1<{0} players} online{0,choice,0#.|0<: {1}}",
-                                    mcs.ar().o(), mcs.ar().b(false));
+                                    players, playerList);
     }
 
     public static void sendMessageFromJson(String json) {
-        MinecraftServer.P().ar().sendFromJson(json);
+        try {
+            sendFromJson.invoke(loginManager, json);
+        } catch (ReflectiveOperationException e) {
+            log.error("Could not send message", e);
+        }
     }
 }

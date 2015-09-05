@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 MinecraftOnline
+ * Copyright (C) 2014-2015 MinecraftOnline
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -36,6 +36,7 @@ import org.pircbotx.PircBotX;
 public @Data class Config {
     private Builder<PircBotX> botConfig = new Builder<>();
     private char prefix = '.';
+    private boolean sendNoSuchCommand = true;
     private JsonElement privmsgFormat = new JsonParser().parse("[{\"text\":\"[IRC] \",\"color\":\"gray\"},"
             + "{\"text\":\"<{user}> {message}\", \"color\":\"white\"}]");
     private JsonElement actionFormat = new JsonParser().parse("[{\"text\":\"[IRC] \",\"color\":\"gray\"},"

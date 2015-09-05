@@ -13,6 +13,7 @@
     "auto_reconnect": true
   },
   "prefix": ".",
+  "send_no_such_command": true,
   "privmsg_format": [
     {"text": "[IRC] <{user}> ", "color": "gray"},
     {"text": "{message}", "color": "white"}

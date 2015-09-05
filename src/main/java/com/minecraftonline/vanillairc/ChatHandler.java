@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 MinecraftOnline
+ * Copyright (C) 2014-2015 MinecraftOnline
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -58,7 +58,7 @@ public class ChatHandler extends ListenerAdapter<PircBotX> {
             Command c = Command.fromString(command);
             if (c != null) {
                 c.handleCommand(event);
-            } else {
+            } else if (config.isSendNoSuchCommand()) {
                 event.respond("No such command");
             }
         } else {

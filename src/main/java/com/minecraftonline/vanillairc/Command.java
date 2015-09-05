@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 MinecraftOnline
+ * Copyright (C) 2014-2015 MinecraftOnline
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
@@ -16,8 +16,11 @@
  */
 package com.minecraftonline.vanillairc;
 
+import com.google.common.collect.Collections2;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
+import org.apache.commons.lang3.StringUtils;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.events.MessageEvent;
 
@@ -29,7 +32,14 @@ public enum Command {
 
     LIST((MessageEvent<PircBotX> event) -> {
         event.respond(ObfuscationHelper.getPlayersString());
-    }, "players", "who");
+    }, "players", "who"),
+
+    HELP((MessageEvent<PircBotX> event) -> {
+        String commandList = StringUtils.join(Collections2.transform(
+                Arrays.asList(Command.values()), (cmd) -> cmd.name().toLowerCase(Locale.ROOT)), ", ");
+
+        event.respond("Available commands: " + commandList);
+    });
 
     private final CommandHandler handler;
     private static HashMap<String, Command> commands;

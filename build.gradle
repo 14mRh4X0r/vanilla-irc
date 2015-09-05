@@ -1,12 +1,12 @@
 plugins {
   id "com.github.johnrengelman.shadow" version "1.2.2"
-  id "me.tatarka.retrolambda" version "3.2.0"
+  id "me.tatarka.retrolambda" version "3.2.2"
 }
 
 apply plugin: 'java'
 
-ext.base_version = '0.1.2'
-ext.mc_version = '15w35e'
+ext.base_version = '0.2.0'
+ext.mc_version = '15w36d'
 
 archivesBaseName = 'vanilla-irc'
 group = 'com.minecraftonline'
