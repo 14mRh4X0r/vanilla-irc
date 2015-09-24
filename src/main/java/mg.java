@@ -59,11 +59,11 @@ public abstract class mg {
     private final mh m;
     private final mn n;
     private final Map<UUID, ne> o;
-    private ayr p;
+    private ayv p;
     private boolean q;
     protected int e;
     private int r;
-    private agu.a s; // VanillaIRC -- faulty decompilation: agu -> agu.a
+    private agy.a s; // VanillaIRC -- faulty decompilation: agy -> agy.a
     private boolean t;
     private int u;
 
@@ -82,7 +82,7 @@ public abstract class mg {
     }
 
     public void a(ek var1, lm var2) {
-        GameProfile var3 = var2.cn();
+        GameProfile var3 = var2.cp();
         mc var4 = this.h.aA();
         GameProfile var5 = var4.a(var3.getId());
         String var6 = var5 == null ? var3.getName() : var5.getName();
@@ -90,7 +90,7 @@ public abstract class mg {
         var4.a(var3);
         dn var7 = this.a(var2);
 
-        var2.a((agr) this.h.a(var2.ak));
+        var2.a((agv) this.h.a(var2.ak));
         var2.c.a((lk) var2.m);
         String var8 = "local";
 
@@ -100,7 +100,7 @@ public abstract class mg {
 
         f.info(var2.h_() + "[" + var8 + "] logged in with entity id " + var2.H() + " at (" + var2.q + ", " + var2.r + ", " + var2.s + ")");
         lk var9 = this.h.a(var2.ak);
-        ayi var10 = var9.S();
+        aym var10 = var9.S();
         cj var11 = var9.Q();
 
         this.a(var2, (lm) null, var9);
@@ -139,7 +139,7 @@ public abstract class mg {
             var2.a(this.h.X(), this.h.Y());
         }
 
-        Iterator var14 = var2.bu().iterator();
+        Iterator var14 = var2.bw().iterator();
 
         while (var14.hasNext()) {
             qw var15 = (qw) var14.next();
@@ -149,7 +149,7 @@ public abstract class mg {
 
         var2.j_();
         if (var7 != null && var7.b("Riding", 10)) {
-            rc var16 = re.a(var7.o("Riding"), (agr) var9);
+            rc var16 = re.a(var7.o("Riding"), (agv) var9);
 
             if (var16 != null) {
                 var16.l = true;
@@ -166,13 +166,13 @@ public abstract class mg {
         Iterator var4 = var1.g().iterator();
 
         while (var4.hasNext()) {
-            aze var5 = (aze) var4.next();
+            azi var5 = (azi) var4.next();
 
             var2.a.a((ff) (new hs(var5, 0)));
         }
 
         for (int var9 = 0; var9 < 19; ++var9) {
-            azd var10 = var1.a(var9);
+            azh var10 = var1.a(var9);
 
             if (var10 != null && !var3.contains(var10)) {
                 List var6 = var1.d(var10);
@@ -192,30 +192,30 @@ public abstract class mg {
 
     public void a(lk[] var1) {
         this.p = var1[0].R().e();
-        var1[0].ai().a(new aqn() {
-            public void a(aqp var1, double var2) {
+        var1[0].ai().a(new aqr() {
+            public void a(aqt var1, double var2) {
                 mg.this.a((ff) (new hh(var1, hh.a.a))); // VanillaIRC -- faulty decompilation: hh -> hh.a
             }
 
-            public void a(aqp var1, double var2, double var4, long var6) {
+            public void a(aqt var1, double var2, double var4, long var6) {
                 mg.this.a((ff) (new hh(var1, hh.a.b))); // VanillaIRC -- faulty decompilation: hh -> hh.a
             }
 
-            public void a(aqp var1, double var2, double var4) {
+            public void a(aqt var1, double var2, double var4) {
                 mg.this.a((ff) (new hh(var1, hh.a.c))); // VanillaIRC -- faulty decompilation: hh -> hh.a
             }
 
-            public void a(aqp var1, int var2) {
+            public void a(aqt var1, int var2) {
                 mg.this.a((ff) (new hh(var1, hh.a.e))); // VanillaIRC -- faulty decompilation: hh -> hh.a
             }
 
-            public void b(aqp var1, int var2) {
+            public void b(aqt var1, int var2) {
                 mg.this.a((ff) (new hh(var1, hh.a.f))); // VanillaIRC -- faulty decompilation: hh -> hh.a
             }
 
-            public void b(aqp var1, double var2) {}
+            public void b(aqt var1, double var2) {}
 
-            public void c(aqp var1, double var2) {}
+            public void c(aqt var1, double var2) {}
         });
     }
 
@@ -227,7 +227,7 @@ public abstract class mg {
         }
 
         var3.w().a(var1);
-        var3.q().d((int) var1.q >> 4, (int) var1.s >> 4);
+        var3.r().d((int) var1.q >> 4, (int) var1.s >> 4);
     }
 
     public int d() {
@@ -251,7 +251,7 @@ public abstract class mg {
 
     protected void b(lm var1) {
         this.p.a(var1);
-        ne var2 = (ne) this.o.get(var1.aR());
+        ne var2 = (ne) this.o.get(var1.aS());
 
         if (var2 != null) {
             var2.b();
@@ -261,12 +261,9 @@ public abstract class mg {
 
     public void c(lm var1) {
         this.i.add(var1);
-        this.j.put(var1.aR(), var1);
+        this.j.put(var1.aS(), var1);
         this.a((ff) (new gz(gz.a.a, new lm[] { var1}))); // VanillaIRC -- faulty decompilation: gz -> gz.a
         lk var2 = this.h.a(var1.ak);
-
-        var2.a((rc) var1);
-        this.a(var1, (lk) null);
 
         for (int var3 = 0; var3 < this.i.size(); ++var3) {
             lm var4 = (lm) this.i.get(var3);
@@ -274,6 +271,8 @@ public abstract class mg {
             var1.a.a((ff) (new gz(gz.a.a, new lm[] { var4}))); // VanillaIRC -- faulty decompilation: gz -> gz.a
         }
 
+        var2.a((rc) var1);
+        this.a(var1, (lk) null);
     }
 
     public void d(lm var1) {
@@ -293,7 +292,7 @@ public abstract class mg {
         var2.e(var1);
         var2.w().b(var1);
         this.i.remove(var1);
-        UUID var3 = var1.aR();
+        UUID var3 = var1.aS();
         lm var4 = (lm) this.j.get(var3);
 
         if (var4 == var1) {
@@ -333,13 +332,13 @@ public abstract class mg {
     }
 
     public lm g(GameProfile var1) {
-        UUID var2 = yx.a(var1);
+        UUID var2 = zb.a(var1);
         ArrayList var3 = Lists.newArrayList();
 
         for (int var4 = 0; var4 < this.i.size(); ++var4) {
             lm var5 = (lm) this.i.get(var4);
 
-            if (var5.aR().equals(var2)) {
+            if (var5.aS().equals(var2)) {
                 var3.add(var5);
             }
         }
@@ -375,8 +374,8 @@ public abstract class mg {
         var1.w().w().b(var1);
         this.i.remove(var1);
         this.h.a(var1.ak).f(var1);
-        cj var4 = var1.cr();
-        boolean var5 = var1.cs();
+        cj var4 = var1.ct();
+        boolean var5 = var1.cu();
 
         var1.ak = var2;
         Object var6;
@@ -387,13 +386,13 @@ public abstract class mg {
             var6 = new ln(this.h.a(var1.ak));
         }
 
-        lm var7 = new lm(this.h, this.h.a(var1.ak), var1.cn(), (ln) var6);
+        lm var7 = new lm(this.h, this.h.a(var1.ak), var1.cp(), (ln) var6);
 
         var7.a = var1.a;
-        var7.a((yx) var1, var3);
+        var7.a((zb) var1, var3);
         var7.d(var1.H());
-        var7.o(var1);
-        var7.a(var1.bY());
+        var7.p(var1);
+        var7.a(var1.ca());
         Iterator var8 = var1.I().iterator();
 
         while (var8.hasNext()) {
@@ -408,18 +407,18 @@ public abstract class mg {
         cj var11;
 
         if (var4 != null) {
-            var11 = yx.a(this.h.a(var1.ak), var4, var5);
+            var11 = zb.a(this.h.a(var1.ak), var4, var5);
             if (var11 != null) {
-                var7.b((double) ((float) var11.o() + 0.5F), (double) ((float) var11.p() + 0.1F), (double) ((float) var11.q() + 0.5F), 0.0F, 0.0F);
+                var7.b((double) ((float) var11.p() + 0.5F), (double) ((float) var11.q() + 0.1F), (double) ((float) var11.r() + 0.5F), 0.0F, 0.0F);
                 var7.a(var4, var5);
             } else {
                 var7.a.a((ff) (new gn(0, 0.0F)));
             }
         }
 
-        var10.q().d((int) var7.q >> 4, (int) var7.s >> 4);
+        var10.r().d((int) var7.q >> 4, (int) var7.s >> 4);
 
-        while (!var10.a((rc) var7, var7.aZ()).isEmpty() && var7.r < 256.0D) {
+        while (!var10.a((rc) var7, var7.bb()).isEmpty() && var7.r < 256.0D) {
             var7.b(var7.q, var7.r + 1.0D, var7.s);
         }
 
@@ -433,14 +432,14 @@ public abstract class mg {
         var10.w().a(var7);
         var10.a((rc) var7);
         this.i.add(var7);
-        this.j.put(var7.aR(), var7);
+        this.j.put(var7.aS(), var7);
         var7.j_();
-        var7.c(var7.bw());
+        var7.c(var7.by());
         return var7;
     }
 
     public void f(lm var1) {
-        GameProfile var2 = var1.cn();
+        GameProfile var2 = var1.cp();
         int var3 = this.h(var2) ? this.m.a(var2) : 0;
 
         var3 = this.h.R() && this.h.d[0].S().u() ? 4 : var3;
@@ -461,12 +460,12 @@ public abstract class mg {
         var1.G = false;
         if (var3 == null) {
             this.a(var1, var4, var5, var6);
-        } else if (var1.am()) {
+        } else if (var1.an()) {
             var5.a((rc) var1, false);
             var1.a(var3, var1.w, var1.x);
             var6.a((rc) var1);
             var6.a((rc) var1, false);
-            var1.a((agr) var6);
+            var1.a((agv) var6);
         }
 
         this.a(var1, var5);
@@ -474,7 +473,7 @@ public abstract class mg {
         var1.c.a(var6);
         this.b(var1, var6);
         this.g(var1);
-        Iterator var7 = var1.bu().iterator();
+        Iterator var7 = var1.bw().iterator();
 
         while (var7.hasNext()) {
             qw var8 = (qw) var7.next();
@@ -495,14 +494,14 @@ public abstract class mg {
             var5 = od.a(var5 / var9, var4.ai().b() + 16.0D, var4.ai().d() - 16.0D);
             var7 = od.a(var7 / var9, var4.ai().c() + 16.0D, var4.ai().e() - 16.0D);
             var1.b(var5, var1.r, var7, var1.w, var1.x);
-            if (var1.am()) {
+            if (var1.an()) {
                 var3.a(var1, false);
             }
         } else if (var1.ak == 0) {
             var5 = od.a(var5 * var9, var4.ai().b() + 16.0D, var4.ai().d() - 16.0D);
             var7 = od.a(var7 * var9, var4.ai().c() + 16.0D, var4.ai().e() - 16.0D);
             var1.b(var5, var1.r, var7, var1.w, var1.x);
-            if (var1.am()) {
+            if (var1.an()) {
                 var3.a(var1, false);
             }
         } else {
@@ -511,14 +510,14 @@ public abstract class mg {
             if (var2 == 1) {
                 var12 = var4.Q();
             } else {
-                var12 = var4.o();
+                var12 = var4.p();
             }
 
-            var5 = (double) var12.o();
-            var1.r = (double) var12.p();
-            var7 = (double) var12.q();
+            var5 = (double) var12.p();
+            var1.r = (double) var12.q();
+            var7 = (double) var12.r();
             var1.b(var5, var1.r, var7, 90.0F, 0.0F);
-            if (var1.am()) {
+            if (var1.an()) {
                 var3.a(var1, false);
             }
         }
@@ -528,7 +527,7 @@ public abstract class mg {
             var3.A.a("placing");
             var5 = (double) od.a((int) var5, -29999872, 29999872);
             var7 = (double) od.a((int) var7, -29999872, 29999872);
-            if (var1.am()) {
+            if (var1.an()) {
                 var1.b(var5, var1.r, var7, var1.w, var1.x);
                 var4.x().a(var1, var11);
                 var4.a(var1);
@@ -538,7 +537,7 @@ public abstract class mg {
             var3.A.b();
         }
 
-        var1.a((agr) var4);
+        var1.a((agv) var4);
     }
 
     public void e() {
@@ -567,8 +566,8 @@ public abstract class mg {
 
     }
 
-    public void a(yx var1, eu var2) {
-        azj var3 = var1.aF();
+    public void a(zb var1, eu var2) {
+        azn var3 = var1.aG();
 
         if (var3 != null) {
             Collection var4 = var3.d();
@@ -586,8 +585,8 @@ public abstract class mg {
         }
     }
 
-    public void b(yx var1, eu var2) {
-        azj var3 = var1.aF();
+    public void b(zb var1, eu var2) {
+        azn var3 = var1.aG();
 
         if (var3 == null) {
             this.a(var2);
@@ -595,7 +594,7 @@ public abstract class mg {
             for (int var4 = 0; var4 < this.i.size(); ++var4) {
                 lm var5 = (lm) this.i.get(var4);
 
-                if (var5.aF() != var3) {
+                if (var5.aG() != var3) {
                     var5.a(var2);
                 }
             }
@@ -614,7 +613,7 @@ public abstract class mg {
 
             var2 = var2 + ((lm) var3.get(var4)).h_();
             if (var1) {
-                var2 = var2 + " (" + ((lm) var3.get(var4)).aR().toString() + ")";
+                var2 = var2 + " (" + ((lm) var3.get(var4)).aS().toString() + ")";
             }
         }
 
@@ -635,7 +634,7 @@ public abstract class mg {
         GameProfile[] var1 = new GameProfile[this.i.size()];
 
         for (int var2 = 0; var2 < this.i.size(); ++var2) {
-            var1[var2] = ((lm) this.i.get(var2)).cn();
+            var1[var2] = ((lm) this.i.get(var2)).cp();
         }
 
         return var1;
@@ -703,10 +702,10 @@ public abstract class mg {
     }
 
     public void a(double var1, double var3, double var5, double var7, int var9, ff var10) {
-        this.a((yx) null, var1, var3, var5, var7, var9, var10);
+        this.a((zb) null, var1, var3, var5, var7, var9, var10);
     }
 
-    public void a(yx var1, double var2, double var4, double var6, double var8, int var10, ff var11) {
+    public void a(zb var1, double var2, double var4, double var6, double var8, int var10, ff var11) {
         for (int var12 = 0; var12 < this.i.size(); ++var12) {
             lm var13 = (lm) this.i.get(var12);
 
@@ -757,7 +756,7 @@ public abstract class mg {
     public void a() {}
 
     public void b(lm var1, lk var2) {
-        aqp var3 = this.h.d[0].ai();
+        aqt var3 = this.h.d[0].ai();
 
         var1.a.a((ff) (new hh(var3, hh.a.d))); // VanillaIRC -- faulty decompilation: hh -> hh.a
         var1.a.a((ff) (new hv(var2.O(), var2.P(), var2.T().b("doDaylightCycle"))));
@@ -822,7 +821,7 @@ public abstract class mg {
         return null;
     }
 
-    private void a(lm var1, lm var2, agr var3) {
+    private void a(lm var1, lm var2, agv var3) {
         if (var2 != null) {
             var1.c.a(var2.c.b());
         } else if (this.s != null) {
@@ -865,8 +864,8 @@ public abstract class mg {
         this.a(var1, true);
     }
 
-    public ne a(yx var1) {
-        UUID var2 = var1.aR();
+    public ne a(zb var1) {
+        UUID var2 = var1.aS();
         ne var3 = var2 == null ? null : (ne) this.o.get(var2);
 
         if (var3 == null) {
@@ -900,6 +899,7 @@ public abstract class mg {
 
                 if (var5 != null) {
                     var5.w().a(var1);
+                    var5.v().a(var1);
                 }
             }
 
