@@ -5,7 +5,7 @@ plugins {
 
 apply plugin: 'java'
 
-ext.base_version = '0.2.0'
+ext.base_version = '0.2.1'
 ext.mc_version = '1.9'
 
 archivesBaseName = 'vanilla-irc'
