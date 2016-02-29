@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'java'
 
 ext.base_version = '0.2.0'
-ext.mc_version = '15w44b'
+ext.mc_version = '1.9'
 
 archivesBaseName = 'vanilla-irc'
 group = 'com.minecraftonline'
@@ -56,10 +56,18 @@ jar {
   }
 }
 
-assemble.dependsOn clean, shadowJar
+task checkClass {
+  check.dependsOn checkClass
+  onlyIf { tasks.compileJava.didWork }
 
-task checkClass << {
-  // TODO: implement this
+  doLast {
+    def nmsFile = sourceSets.main.java.files.getAt(0)
+    def nmsName = org.apache.commons.io.FilenameUtils.getBaseName(nmsFile.name)
+    def nmsCheck = /ObfuscationHelper\.setLoginManager\(this, ${nmsName}\.class\);/
+
+    if (!(nmsFile.text =~ nmsCheck).find())
+      throw new RuntimeException("Wrong class name in ${nmsFile}, aborting")
+  }
 }
 
-build.dependsOn checkClass
+assemble.dependsOn clean, shadowJar

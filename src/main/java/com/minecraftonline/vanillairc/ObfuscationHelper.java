@@ -56,8 +56,9 @@ public class ObfuscationHelper {
             log.error("Could not retrieve player list", e);
         }
 
-        return MessageFormat.format("{0,choice,0#No players|1#1 player|1<{0} players} online{0,choice,0#.|0<: {1}}",
-                                    players, playerList);
+        return MessageFormat.format(
+                "{0,choice,0#No players|1#1 player|1<{0} players} online{0,choice,0#.|0<: {1}}",
+                players, playerList);
     }
 
     public static void sendMessageFromJson(String json) {
