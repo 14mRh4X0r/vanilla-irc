@@ -6,7 +6,7 @@ plugins {
 apply plugin: 'java'
 
 ext.base_version = '0.2.0'
-ext.mc_version = '15w44a'
+ext.mc_version = '15w44b'
 
 archivesBaseName = 'vanilla-irc'
 group = 'com.minecraftonline'
@@ -57,3 +57,9 @@ jar {
 }
 
 assemble.dependsOn clean, shadowJar
+
+task checkClass << {
+  // TODO: implement this
+}
+
+build.dependsOn checkClass
