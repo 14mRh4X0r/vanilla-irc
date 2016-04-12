@@ -38,6 +38,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import javax.annotation.Nullable;
 import net.minecraft.server.MinecraftServer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -721,6 +722,7 @@ public abstract class mm {
         return this.m.d(var1) || this.h.R() && this.h.d[0].T().u() && this.h.Q().equalsIgnoreCase(var1.getName()) || this.t;
     }
 
+    @Nullable
     public lr a(String var1) {
         Iterator var2 = this.i.iterator();
 
@@ -737,7 +739,7 @@ public abstract class mm {
         return var3;
     }
 
-    public void a(zj var1, double var2, double var4, double var6, double var8, int var10, ff<?> var11) {
+    public void a(@Nullable zj var1, double var2, double var4, double var6, double var8, int var10, ff<?> var11) {
         for (int var12 = 0; var12 < this.i.size(); ++var12) {
             lr var13 = (lr) this.i.get(var12);
 
