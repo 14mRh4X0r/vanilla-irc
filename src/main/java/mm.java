@@ -44,7 +44,6 @@ import org.apache.logging.log4j.Logger;
 
 
 public abstract class mm {
-
     public static final File a = new File("banned-players.json");
     public static final File b = new File("banned-ips.json");
     public static final File c = new File("ops.json");
@@ -59,11 +58,11 @@ public abstract class mm {
     private final mn m;
     private final mt n;
     private final Map<UUID, no> o;
-    private azq p;
+    private azn p;
     private boolean q;
     protected int e;
     private int r;
-    private ahw.a s; // VanillaIRC -- faulty decompilation: ahw -> ahw.a
+    private ahw.a s;
     private boolean t;
     private int u;
 
@@ -100,7 +99,7 @@ public abstract class mm {
 
         f.info(var2.h_() + "[" + var8 + "] logged in with entity id " + var2.O() + " at (" + var2.p + ", " + var2.q + ", " + var2.r + ")");
         lp var9 = this.h.a(var2.am);
-        azh var10 = var9.T();
+        azg var10 = var9.T();
         cj var11 = var9.R();
 
         this.a(var2, (lr) null, var9);
@@ -199,13 +198,13 @@ public abstract class mm {
         Iterator var4 = var1.g().iterator();
 
         while (var4.hasNext()) {
-            bbm var5 = (bbm) var4.next();
+            bbj var5 = (bbj) var4.next();
 
             var2.a.a((ff) (new ht(var5, 0)));
         }
 
         for (int var9 = 0; var9 < 19; ++var9) {
-            bbl var10 = var1.a(var9);
+            bbi var10 = var1.a(var9);
 
             if (var10 != null && !var3.contains(var10)) {
                 List var6 = var1.d(var10);
@@ -227,23 +226,23 @@ public abstract class mm {
         this.p = var1[0].S().e();
         var1[0].aj().a(new art() {
             public void a(arv var1, double var2) {
-                mm.this.a((ff) (new hh(var1, hh.a.a))); // VanillaIRC -- faulty decompilation: hh -> hh.a
+                mm.this.a((ff) (new hh(var1, hh.a.a)));
             }
 
             public void a(arv var1, double var2, double var4, long var6) {
-                mm.this.a((ff) (new hh(var1, hh.a.b))); // VanillaIRC -- faulty decompilation: hh -> hh.a
+                mm.this.a((ff) (new hh(var1, hh.a.b)));
             }
 
             public void a(arv var1, double var2, double var4) {
-                mm.this.a((ff) (new hh(var1, hh.a.c))); // VanillaIRC -- faulty decompilation: hh -> hh.a
+                mm.this.a((ff) (new hh(var1, hh.a.c)));
             }
 
             public void a(arv var1, int var2) {
-                mm.this.a((ff) (new hh(var1, hh.a.e))); // VanillaIRC -- faulty decompilation: hh -> hh.a
+                mm.this.a((ff) (new hh(var1, hh.a.e)));
             }
 
             public void b(arv var1, int var2) {
-                mm.this.a((ff) (new hh(var1, hh.a.f))); // VanillaIRC -- faulty decompilation: hh -> hh.a
+                mm.this.a((ff) (new hh(var1, hh.a.f)));
             }
 
             public void b(arv var1, double var2) {}
@@ -272,7 +271,7 @@ public abstract class mm {
         dn var3;
 
         if (var1.h_().equals(this.h.Q()) && var2 != null) {
-            var3 = this.h.aI().a((oy) oz.b, var2);
+            var3 = this.h.aI().a((oy) oz.b, (dn) var2);
             var1.f(var3);
             f.debug("loading single player");
         } else {
@@ -295,15 +294,15 @@ public abstract class mm {
     public void c(lr var1) {
         this.i.add(var1);
         this.j.put(var1.bc(), var1);
-        this.a((ff) (new gz(gz.a.a, new lr[] { var1}))); // VanillaIRC -- faulty decompilation: gz -> gz.a
+        this.a((ff) (new gz(gz.a.a, new lr[] { var1})));
         lp var2 = this.h.a(var1.am);
 
         for (int var3 = 0; var3 < this.i.size(); ++var3) {
-            var1.a.a((ff) (new gz(gz.a.a, new lr[] { (lr) this.i.get(var3)}))); // VanillaIRC -- faulty decompilation: gz -> gz.a
+            var1.a.a((ff) (new gz(gz.a.a, new lr[] { (lr) this.i.get(var3)})));
         }
 
         var2.a((rr) var1);
-        this.a(var1, (lp) null);
+        this.a((lr) var1, (lp) null);
     }
 
     public void d(lr var1) {
@@ -313,7 +312,7 @@ public abstract class mm {
     public void e(lr var1) {
         lp var2 = var1.x();
 
-        var1.b(nt.f);
+        var1.b((np) nt.f);
         this.b(var1);
         if (var1.aI()) {
             rr var3 = var1.bw();
@@ -345,7 +344,7 @@ public abstract class mm {
             this.o.remove(var6);
         }
 
-        this.a((ff) (new gz(gz.a.e, new lr[] { var1}))); // VanillaIRC -- faulty decompilation: gz -> gz.a
+        this.a((ff) (new gz(gz.a.e, new lr[] { var1})));
     }
 
     public String a(SocketAddress var1, GameProfile var2) {
@@ -437,13 +436,13 @@ public abstract class mm {
         var7.a((zj) var1, var3);
         var7.f(var1.O());
         var7.v(var1);
-        var7.a(var1.cr());
+        var7.a((rz) var1.cr());
         Iterator var8 = var1.P().iterator();
 
         while (var8.hasNext()) {
             String var9 = (String) var8.next();
 
-            var7.a(var9);
+            var7.a((String) var9);
         }
 
         lp var10 = this.h.a(var1.am);
@@ -455,7 +454,7 @@ public abstract class mm {
             var11 = zj.a(this.h.a(var1.am), var4, var5);
             if (var11 != null) {
                 var7.b((double) ((float) var11.p() + 0.5F), (double) ((float) var11.q() + 0.1F), (double) ((float) var11.r() + 0.5F), 0.0F, 0.0F);
-                var7.a(var4, var5);
+                var7.a((cj) var4, var5);
             } else {
                 var7.a.a((ff) (new gn(0, 0.0F)));
             }
@@ -463,7 +462,7 @@ public abstract class mm {
 
         var10.r().d((int) var7.p >> 4, (int) var7.r >> 4);
 
-        while (!var10.a((rr) var7, var7.bl()).isEmpty() && var7.q < 256.0D) {
+        while (!var10.a((rr) var7, (bbe) var7.bl()).isEmpty() && var7.q < 256.0D) {
             var7.b(var7.p, var7.q + 1.0D, var7.r);
         }
 
@@ -579,7 +578,7 @@ public abstract class mm {
 
     public void e() {
         if (++this.u > 600) {
-            this.a((ff) (new gz(gz.a.c, this.i))); // VanillaIRC -- faulty decompilation: gz -> gz.a
+            this.a((ff) (new gz(gz.a.c, this.i)));
             this.u = 0;
         }
 
@@ -604,7 +603,7 @@ public abstract class mm {
     }
 
     public void a(zj var1, eu var2) {
-        bbr var3 = var1.aO();
+        bbo var3 = var1.aO();
 
         if (var3 != null) {
             Collection var4 = var3.d();
@@ -623,7 +622,7 @@ public abstract class mm {
     }
 
     public void b(zj var1, eu var2) {
-        bbr var3 = var1.aO();
+        bbo var3 = var1.aO();
 
         if (var3 == null) {
             this.a(var2);
@@ -791,7 +790,7 @@ public abstract class mm {
     public void b(lr var1, lp var2) {
         arv var3 = this.h.d[0].aj();
 
-        var1.a.a((ff) (new hh(var3, hh.a.d))); // VanillaIRC -- faulty decompilation: hh -> hh.a
+        var1.a.a((ff) (new hh(var3, hh.a.d)));
         var1.a.a((ff) (new hw(var2.P(), var2.Q(), var2.U().b("doDaylightCycle"))));
         if (var2.W()) {
             var1.a.a((ff) (new gn(1, 0.0F)));
@@ -950,5 +949,4 @@ public abstract class mm {
     public boolean f(GameProfile var1) {
         return false;
     }
-
 }
