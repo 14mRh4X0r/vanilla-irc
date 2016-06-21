@@ -59,11 +59,11 @@ public abstract class mp {
     private final mq m;
     private final mw n;
     private final Map<UUID, nr> o;
-    private bai p;
+    private bah p;
     private boolean q;
     protected int e;
     private int r;
-    private aic s;
+    private aib s;
     private boolean t;
     private int u;
 
@@ -90,7 +90,7 @@ public abstract class mp {
         var4.a(var3);
         dr var7 = this.a(var2);
 
-        var2.a((aie) this.h.a(var2.an));
+        var2.a((aid) this.h.a(var2.an));
         var2.c.a((ls) var2.l);
         String var8 = "local";
 
@@ -100,7 +100,7 @@ public abstract class mp {
 
         f.info("{}[{}] logged in with entity id {} at ({}, {}, {})", new Object[] { var2.h_(), var8, Integer.valueOf(var2.O()), Double.valueOf(var2.p), Double.valueOf(var2.q), Double.valueOf(var2.r)});
         ls var9 = this.h.a(var2.an);
-        bab var10 = var9.T();
+        baa var10 = var9.T();
         cm var11 = var9.R();
 
         this.a(var2, (lu) null, var9);
@@ -150,7 +150,7 @@ public abstract class mp {
         if (var7 != null) {
             if (var7.b("RootVehicle", 10)) {
                 dr var19 = var7.o("RootVehicle");
-                rw var21 = atk.a(var19.o("Entity"), var9, true);
+                rw var21 = atj.a(var19.o("Entity"), var9, true);
 
                 if (var21 != null) {
                     UUID var16 = var19.a("Attach");
@@ -183,7 +183,7 @@ public abstract class mp {
                     }
                 }
             } else if (var7.b("Riding", 10)) {
-                rw var20 = atk.a(var7.o("Riding"), var9, true);
+                rw var20 = atj.a(var7.o("Riding"), var9, true);
 
                 if (var20 != null) {
                     var2.a(var20, true);
@@ -199,13 +199,13 @@ public abstract class mp {
         Iterator var4 = var1.g().iterator();
 
         while (var4.hasNext()) {
-            bcf var5 = (bcf) var4.next();
+            bce var5 = (bce) var4.next();
 
             var2.a.a((fj) (new hx(var5, 0)));
         }
 
         for (int var9 = 0; var9 < 19; ++var9) {
-            bce var10 = var1.a(var9);
+            bcd var10 = var1.a(var9);
 
             if (var10 != null && !var3.contains(var10)) {
                 List var6 = var1.d(var10);
@@ -225,30 +225,30 @@ public abstract class mp {
 
     public void a(ls[] var1) {
         this.p = var1[0].S().e();
-        var1[0].aj().a(new asl() {
-            public void a(asn var1, double var2) {
+        var1[0].aj().a(new ask() {
+            public void a(asm var1, double var2) {
                 mp.this.a((fj) (new hl(var1, hl.a.a)));
             }
 
-            public void a(asn var1, double var2, double var4, long var6) {
+            public void a(asm var1, double var2, double var4, long var6) {
                 mp.this.a((fj) (new hl(var1, hl.a.b)));
             }
 
-            public void a(asn var1, double var2, double var4) {
+            public void a(asm var1, double var2, double var4) {
                 mp.this.a((fj) (new hl(var1, hl.a.c)));
             }
 
-            public void a(asn var1, int var2) {
+            public void a(asm var1, int var2) {
                 mp.this.a((fj) (new hl(var1, hl.a.e)));
             }
 
-            public void b(asn var1, int var2) {
+            public void b(asm var1, int var2) {
                 mp.this.a((fj) (new hl(var1, hl.a.f)));
             }
 
-            public void b(asn var1, double var2) {}
+            public void b(asm var1, double var2) {}
 
-            public void c(asn var1, double var2) {}
+            public void c(asm var1, double var2) {}
         });
     }
 
@@ -377,7 +377,7 @@ public abstract class mp {
     }
 
     public lu g(GameProfile var1) {
-        UUID var2 = zt.a(var1);
+        UUID var2 = zs.a(var1);
         ArrayList var3 = Lists.newArrayList();
 
         for (int var4 = 0; var4 < this.i.size(); ++var4) {
@@ -434,10 +434,10 @@ public abstract class mp {
         lu var7 = new lu(this.h, this.h.a(var1.an), var1.cP(), (lv) var6);
 
         var7.a = var1.a;
-        var7.a((zt) var1, var3);
+        var7.a((zs) var1, var3);
         var7.h(var1.O());
         var7.v(var1);
-        var7.a((sf) var1.cw());
+        var7.a((se) var1.cw());
         Iterator var8 = var1.P().iterator();
 
         while (var8.hasNext()) {
@@ -452,7 +452,7 @@ public abstract class mp {
         cm var11;
 
         if (var4 != null) {
-            var11 = zt.a(this.h.a(var1.an), var4, var5);
+            var11 = zs.a(this.h.a(var1.an), var4, var5);
             if (var11 != null) {
                 var7.b((double) ((float) var11.p() + 0.5F), (double) ((float) var11.q() + 0.1F), (double) ((float) var11.r() + 0.5F), 0.0F, 0.0F);
                 var7.a((cm) var4, var5);
@@ -463,7 +463,7 @@ public abstract class mp {
 
         var10.r().c((int) var7.p >> 4, (int) var7.r >> 4);
 
-        while (!var10.a((rw) var7, (bbz) var7.bo()).isEmpty() && var7.q < 256.0D) {
+        while (!var10.a((rw) var7, (bby) var7.bo()).isEmpty() && var7.q < 256.0D) {
             var7.b(var7.p, var7.q + 1.0D, var7.r);
         }
 
@@ -574,7 +574,7 @@ public abstract class mp {
             var3.C.b();
         }
 
-        var1.a((aie) var4);
+        var1.a((aid) var4);
     }
 
     public void e() {
@@ -603,8 +603,8 @@ public abstract class mp {
 
     }
 
-    public void a(zt var1, ey var2) {
-        bck var3 = var1.aQ();
+    public void a(zs var1, ey var2) {
+        bcj var3 = var1.aQ();
 
         if (var3 != null) {
             Collection var4 = var3.d();
@@ -622,8 +622,8 @@ public abstract class mp {
         }
     }
 
-    public void b(zt var1, ey var2) {
-        bck var3 = var1.aQ();
+    public void b(zs var1, ey var2) {
+        bcj var3 = var1.aQ();
 
         if (var3 == null) {
             this.a(var2);
@@ -739,7 +739,7 @@ public abstract class mp {
         return var3;
     }
 
-    public void a(@Nullable zt var1, double var2, double var4, double var6, double var8, int var10, fj<?> var11) {
+    public void a(@Nullable zs var1, double var2, double var4, double var6, double var8, int var10, fj<?> var11) {
         for (int var12 = 0; var12 < this.i.size(); ++var12) {
             lu var13 = (lu) this.i.get(var12);
 
@@ -790,7 +790,7 @@ public abstract class mp {
     public void a() {}
 
     public void b(lu var1, ls var2) {
-        asn var3 = this.h.d[0].aj();
+        asm var3 = this.h.d[0].aj();
 
         var1.a.a((fj) (new hl(var3, hl.a.d)));
         var1.a.a((fj) (new ia(var2.P(), var2.Q(), var2.U().b("doDaylightCycle"))));
@@ -855,7 +855,7 @@ public abstract class mp {
         return null;
     }
 
-    private void a(lu var1, lu var2, aie var3) {
+    private void a(lu var1, lu var2, aid var3) {
         if (var2 != null) {
             var1.c.a(var2.c.b());
         } else if (this.s != null) {
@@ -898,7 +898,7 @@ public abstract class mp {
         this.a(var1, true);
     }
 
-    public nr a(zt var1) {
+    public nr a(zs var1) {
         UUID var2 = var1.be();
         nr var3 = var2 == null ? null : (nr) this.o.get(var2);
 
