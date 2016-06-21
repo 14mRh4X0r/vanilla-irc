@@ -44,7 +44,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-public abstract class mm {
+public abstract class mn {
     public static final File a = new File("banned-players.json");
     public static final File b = new File("banned-ips.json");
     public static final File c = new File("ops.json");
@@ -52,13 +52,13 @@ public abstract class mm {
     private static final Logger f = LogManager.getLogger();
     private static final SimpleDateFormat g = new SimpleDateFormat("yyyy-MM-dd \'at\' HH:mm:ss z");
     private final MinecraftServer h;
-    private final List<lr> i = Lists.newArrayList();
-    private final Map<UUID, lr> j = Maps.newHashMap();
-    private final mr k;
-    private final mj l;
-    private final mn m;
-    private final mt n;
-    private final Map<UUID, no> o;
+    private final List<ls> i = Lists.newArrayList();
+    private final Map<UUID, ls> j = Maps.newHashMap();
+    private final ms k;
+    private final mk l;
+    private final mo m;
+    private final mu n;
+    private final Map<UUID, np> o;
     private azn p;
     private boolean q;
     protected int e;
@@ -67,13 +67,13 @@ public abstract class mm {
     private boolean t;
     private int u;
 
-    { ObfuscationHelper.setLoginManager(this, mm.class); } // VanillaIRC -- store static reference to object
+    { ObfuscationHelper.setLoginManager(this, mn.class); } // VanillaIRC -- store static reference to object
 
-    public mm(MinecraftServer var1) {
-        this.k = new mr(a);
-        this.l = new mj(b);
-        this.m = new mn(c);
-        this.n = new mt(d);
+    public mn(MinecraftServer var1) {
+        this.k = new ms(a);
+        this.l = new mk(b);
+        this.m = new mo(c);
+        this.n = new mu(d);
         this.o = Maps.newHashMap();
         this.h = var1;
         this.k.a(false);
@@ -81,17 +81,17 @@ public abstract class mm {
         this.e = 8;
     }
 
-    public void a(ek var1, lr var2) {
-        GameProfile var3 = var2.cK();
-        mi var4 = this.h.aA();
+    public void a(el var1, ls var2) {
+        GameProfile var3 = var2.cL();
+        mj var4 = this.h.aA();
         GameProfile var5 = var4.a(var3.getId());
         String var6 = var5 == null ? var3.getName() : var5.getName();
 
         var4.a(var3);
-        dn var7 = this.a(var2);
+        dp var7 = this.a(var2);
 
         var2.a((aht) this.h.a(var2.am));
-        var2.c.a((lp) var2.l);
+        var2.c.a((lq) var2.l);
         String var8 = "local";
 
         if (var1.b() != null) {
@@ -99,30 +99,30 @@ public abstract class mm {
         }
 
         f.info(var2.h_() + "[" + var8 + "] logged in with entity id " + var2.O() + " at (" + var2.p + ", " + var2.q + ", " + var2.r + ")");
-        lp var9 = this.h.a(var2.am);
+        lq var9 = this.h.a(var2.am);
         azg var10 = var9.T();
-        cj var11 = var9.R();
+        ck var11 = var9.R();
 
-        this.a(var2, (lr) null, var9);
-        mb var12 = new mb(this.h, var1, var2);
+        this.a(var2, (ls) null, var9);
+        mc var12 = new mc(this.h, var1, var2);
 
-        var12.a((ff) (new gs(var2.O(), var2.c.b(), var10.s(), var9.s.p().a(), var9.ae(), this.p(), var10.t(), var9.U().b("reducedDebugInfo"))));
-        var12.a((ff) (new gh("MC|Brand", (new em(Unpooled.buffer())).a(this.c().getServerModName()))));
-        var12.a((ff) (new fw(var10.x(), var10.y())));
-        var12.a((ff) (new hv(var11)));
-        var12.a((ff) (new gx(var2.bJ)));
-        var12.a((ff) (new hj(var2.br.d)));
+        var12.a((fg) (new gt(var2.O(), var2.c.b(), var10.s(), var9.s.p().a(), var9.ae(), this.p(), var10.t(), var9.U().b("reducedDebugInfo"))));
+        var12.a((fg) (new gi("MC|Brand", (new en(Unpooled.buffer())).a(this.c().getServerModName()))));
+        var12.a((fg) (new fx(var10.x(), var10.y())));
+        var12.a((fg) (new hw(var11)));
+        var12.a((fg) (new gy(var2.bK)));
+        var12.a((fg) (new hk(var2.bs.d)));
         this.f(var2);
         var2.E().d();
         var2.E().b(var2);
-        this.a((kw) var9.ad(), var2);
+        this.a((kx) var9.ad(), var2);
         this.h.aC();
-        fb var13;
+        fc var13;
 
         if (!var2.h_().equalsIgnoreCase(var6)) {
-            var13 = new fb("multiplayer.player.joined.renamed", new Object[] { var2.i_(), var6});
+            var13 = new fc("multiplayer.player.joined.renamed", new Object[] { var2.i_(), var6});
         } else {
-            var13 = new fb("multiplayer.player.joined", new Object[] { var2.i_()});
+            var13 = new fc("multiplayer.player.joined", new Object[] { var2.i_()});
         }
 
         // VanillaIRC start - field "a" blocks class "a"
@@ -131,7 +131,7 @@ public abstract class mm {
         } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         } // VanillaIRC end
-        this.a((eu) var13);
+        this.a((ev) var13);
         this.c(var2);
         var12.a(var2.p, var2.q, var2.r, var2.v, var2.w);
         this.b(var2, var9);
@@ -139,17 +139,17 @@ public abstract class mm {
             var2.a(this.h.X(), this.h.Y());
         }
 
-        Iterator var14 = var2.bO().iterator();
+        Iterator var14 = var2.bP().iterator();
 
         while (var14.hasNext()) {
             rl var15 = (rl) var14.next();
 
-            var12.a((ff) (new ie(var2.O(), var15)));
+            var12.a((fg) (new ig(var2.O(), var15)));
         }
 
         if (var7 != null) {
             if (var7.b("RootVehicle", 10)) {
-                dn var19 = var7.o("RootVehicle");
+                dp var19 = var7.o("RootVehicle");
                 rr var21 = ass.a(var19.o("Entity"), var9, true);
 
                 if (var21 != null) {
@@ -160,7 +160,7 @@ public abstract class mm {
                     if (var21.bc().equals(var16)) {
                         var2.a(var21, true);
                     } else {
-                        var17 = var21.bv().iterator();
+                        var17 = var21.bw().iterator();
 
                         while (var17.hasNext()) {
                             var18 = (rr) var17.next();
@@ -174,7 +174,7 @@ public abstract class mm {
                     if (!var2.aI()) {
                         f.warn("Couldn\'t reattach entity to player");
                         var9.f(var21);
-                        var17 = var21.bv().iterator();
+                        var17 = var21.bw().iterator();
 
                         while (var17.hasNext()) {
                             var18 = (rr) var17.next();
@@ -194,14 +194,14 @@ public abstract class mm {
         var2.j_();
     }
 
-    protected void a(kw var1, lr var2) {
+    protected void a(kx var1, ls var2) {
         HashSet var3 = Sets.newHashSet();
         Iterator var4 = var1.g().iterator();
 
         while (var4.hasNext()) {
             bbj var5 = (bbj) var4.next();
 
-            var2.a.a((ff) (new ht(var5, 0)));
+            var2.a.a((fg) (new hu(var5, 0)));
         }
 
         for (int var9 = 0; var9 < 19; ++var9) {
@@ -212,7 +212,7 @@ public abstract class mm {
                 Iterator var7 = var6.iterator();
 
                 while (var7.hasNext()) {
-                    ff var8 = (ff) var7.next();
+                    fg var8 = (fg) var7.next();
 
                     var2.a.a(var8);
                 }
@@ -223,27 +223,27 @@ public abstract class mm {
 
     }
 
-    public void a(lp[] var1) {
+    public void a(lq[] var1) {
         this.p = var1[0].S().e();
         var1[0].aj().a(new art() {
             public void a(arv var1, double var2) {
-                mm.this.a((ff) (new hh(var1, hh.a.a)));
+                mn.this.a((fg) (new hi(var1, hi.a.a)));
             }
 
             public void a(arv var1, double var2, double var4, long var6) {
-                mm.this.a((ff) (new hh(var1, hh.a.b)));
+                mn.this.a((fg) (new hi(var1, hi.a.b)));
             }
 
             public void a(arv var1, double var2, double var4) {
-                mm.this.a((ff) (new hh(var1, hh.a.c)));
+                mn.this.a((fg) (new hi(var1, hi.a.c)));
             }
 
             public void a(arv var1, int var2) {
-                mm.this.a((ff) (new hh(var1, hh.a.e)));
+                mn.this.a((fg) (new hi(var1, hi.a.e)));
             }
 
             public void b(arv var1, int var2) {
-                mm.this.a((ff) (new hh(var1, hh.a.f)));
+                mn.this.a((fg) (new hi(var1, hi.a.f)));
             }
 
             public void b(arv var1, double var2) {}
@@ -252,27 +252,27 @@ public abstract class mm {
         });
     }
 
-    public void a(lr var1, lp var2) {
-        lp var3 = var1.x();
+    public void a(ls var1, lq var2) {
+        lq var3 = var1.x();
 
         if (var2 != null) {
             var2.w().b(var1);
         }
 
         var3.w().a(var1);
-        var3.r().d((int) var1.p >> 4, (int) var1.r >> 4);
+        var3.r().c((int) var1.p >> 4, (int) var1.r >> 4);
     }
 
     public int d() {
-        return lv.b(this.s());
+        return lw.b(this.s());
     }
 
-    public dn a(lr var1) {
-        dn var2 = this.h.d[0].T().h();
-        dn var3;
+    public dp a(ls var1) {
+        dp var2 = this.h.d[0].T().h();
+        dp var3;
 
         if (var1.h_().equals(this.h.Q()) && var2 != null) {
-            var3 = this.h.aI().a((oy) oz.b, (dn) var2);
+            var3 = this.h.aI().a((oy) oz.b, (dp) var2);
             var1.f(var3);
             f.debug("loading single player");
         } else {
@@ -282,9 +282,9 @@ public abstract class mm {
         return var3;
     }
 
-    protected void b(lr var1) {
+    protected void b(ls var1) {
         this.p.a(var1);
-        no var2 = (no) this.o.get(var1.bc());
+        np var2 = (np) this.o.get(var1.bc());
 
         if (var2 != null) {
             var2.b();
@@ -292,37 +292,37 @@ public abstract class mm {
 
     }
 
-    public void c(lr var1) {
+    public void c(ls var1) {
         this.i.add(var1);
         this.j.put(var1.bc(), var1);
-        this.a((ff) (new gz(gz.a.a, new lr[] { var1})));
-        lp var2 = this.h.a(var1.am);
+        this.a((fg) (new ha(ha.a.a, new ls[] { var1})));
+        lq var2 = this.h.a(var1.am);
 
         for (int var3 = 0; var3 < this.i.size(); ++var3) {
-            var1.a.a((ff) (new gz(gz.a.a, new lr[] { (lr) this.i.get(var3)})));
+            var1.a.a((fg) (new ha(ha.a.a, new ls[] { (ls) this.i.get(var3)})));
         }
 
         var2.a((rr) var1);
-        this.a((lr) var1, (lp) null);
+        this.a((ls) var1, (lq) null);
     }
 
-    public void d(lr var1) {
+    public void d(ls var1) {
         var1.x().w().c(var1);
     }
 
-    public void e(lr var1) {
-        lp var2 = var1.x();
+    public void e(ls var1) {
+        lq var2 = var1.x();
 
-        var1.b((np) nt.f);
+        var1.b((nq) nu.f);
         this.b(var1);
         if (var1.aI()) {
-            rr var3 = var1.bw();
+            rr var3 = var1.bx();
 
-            if (var3.b(lr.class).size() == 1) {
+            if (var3.b(ls.class).size() == 1) {
                 f.debug("Removing player mount");
                 var1.p();
                 var2.f(var3);
-                Iterator var4 = var3.bv().iterator();
+                Iterator var4 = var3.bw().iterator();
 
                 while (var4.hasNext()) {
                     rr var5 = (rr) var4.next();
@@ -338,21 +338,21 @@ public abstract class mm {
         var2.w().b(var1);
         this.i.remove(var1);
         UUID var6 = var1.bc();
-        lr var7 = (lr) this.j.get(var6);
+        ls var7 = (ls) this.j.get(var6);
 
         if (var7 == var1) {
             this.j.remove(var6);
             this.o.remove(var6);
         }
 
-        this.a((ff) (new gz(gz.a.e, new lr[] { var1})));
+        this.a((fg) (new ha(ha.a.e, new ls[] { var1})));
     }
 
     public String a(SocketAddress var1, GameProfile var2) {
         String var4;
 
         if (this.k.a(var2)) {
-            ms var5 = (ms) ((mq) this.k).b(var2); // VanillaIRC -- obfuscation anomaly: cast this.k to mq
+            mt var5 = (mt) ((mr) this.k).b(var2); // VanillaIRC -- obfuscation anomaly: cast this.k to mr
 
             var4 = "You are banned from this server!\nReason: " + var5.d();
             if (var5.c() != null) {
@@ -363,7 +363,7 @@ public abstract class mm {
         } else if (!this.e(var2)) {
             return "You are not white-listed on this server!";
         } else if (this.l.a(var1)) {
-            mk var3 = this.l.b(var1);
+            ml var3 = this.l.b(var1);
 
             var4 = "Your IP address is banned from this server!\nReason: " + var3.d();
             if (var3.c() != null) {
@@ -376,19 +376,19 @@ public abstract class mm {
         }
     }
 
-    public lr g(GameProfile var1) {
+    public ls g(GameProfile var1) {
         UUID var2 = zj.a(var1);
         ArrayList var3 = Lists.newArrayList();
 
         for (int var4 = 0; var4 < this.i.size(); ++var4) {
-            lr var5 = (lr) this.i.get(var4);
+            ls var5 = (ls) this.i.get(var4);
 
             if (var5.bc().equals(var2)) {
                 var3.add(var5);
             }
         }
 
-        lr var7 = (lr) this.j.get(var1.getId());
+        ls var7 = (ls) this.j.get(var1.getId());
 
         if (var7 != null && !var3.contains(var7)) {
             var3.add(var7);
@@ -397,7 +397,7 @@ public abstract class mm {
         Iterator var8 = var3.iterator();
 
         while (var8.hasNext()) {
-            lr var6 = (lr) var8.next();
+            ls var6 = (ls) var8.next();
 
             var6.a.c("You logged in from another location");
         }
@@ -405,39 +405,39 @@ public abstract class mm {
         Object var9;
 
         if (this.h.V()) {
-            var9 = new lk(this.h.a(0));
+            var9 = new ll(this.h.a(0));
         } else {
-            var9 = new ls(this.h.a(0));
+            var9 = new lt(this.h.a(0));
         }
 
-        return new lr(this.h, this.h.a(0), var1, (ls) var9);
+        return new ls(this.h, this.h.a(0), var1, (lt) var9);
     }
 
-    public lr a(lr var1, int var2, boolean var3) {
+    public ls a(ls var1, int var2, boolean var3) {
         var1.x().v().b(var1);
         var1.x().v().b((rr) var1);
         var1.x().w().b(var1);
         this.i.remove(var1);
         this.h.a(var1.am).f(var1);
-        cj var4 = var1.cO();
-        boolean var5 = var1.cP();
+        ck var4 = var1.cP();
+        boolean var5 = var1.cQ();
 
         var1.am = var2;
         Object var6;
 
         if (this.h.V()) {
-            var6 = new lk(this.h.a(var1.am));
+            var6 = new ll(this.h.a(var1.am));
         } else {
-            var6 = new ls(this.h.a(var1.am));
+            var6 = new lt(this.h.a(var1.am));
         }
 
-        lr var7 = new lr(this.h, this.h.a(var1.am), var1.cK(), (ls) var6);
+        ls var7 = new ls(this.h, this.h.a(var1.am), var1.cL(), (lt) var6);
 
         var7.a = var1.a;
         var7.a((zj) var1, var3);
         var7.f(var1.O());
         var7.v(var1);
-        var7.a((rz) var1.cr());
+        var7.a((rz) var1.cs());
         Iterator var8 = var1.P().iterator();
 
         while (var8.hasNext()) {
@@ -446,32 +446,32 @@ public abstract class mm {
             var7.a((String) var9);
         }
 
-        lp var10 = this.h.a(var1.am);
+        lq var10 = this.h.a(var1.am);
 
         this.a(var7, var1, var10);
-        cj var11;
+        ck var11;
 
         if (var4 != null) {
             var11 = zj.a(this.h.a(var1.am), var4, var5);
             if (var11 != null) {
                 var7.b((double) ((float) var11.p() + 0.5F), (double) ((float) var11.q() + 0.1F), (double) ((float) var11.r() + 0.5F), 0.0F, 0.0F);
-                var7.a((cj) var4, var5);
+                var7.a((ck) var4, var5);
             } else {
-                var7.a.a((ff) (new gn(0, 0.0F)));
+                var7.a.a((fg) (new go(0, 0.0F)));
             }
         }
 
-        var10.r().d((int) var7.p >> 4, (int) var7.r >> 4);
+        var10.r().c((int) var7.p >> 4, (int) var7.r >> 4);
 
-        while (!var10.a((rr) var7, (bbe) var7.bl()).isEmpty() && var7.q < 256.0D) {
+        while (!var10.a((rr) var7, (bbe) var7.bm()).isEmpty() && var7.q < 256.0D) {
             var7.b(var7.p, var7.q + 1.0D, var7.r);
         }
 
-        var7.a.a((ff) (new hf(var7.am, var7.l.ae(), var7.l.T().t(), var7.c.b())));
+        var7.a.a((fg) (new hg(var7.am, var7.l.ae(), var7.l.T().t(), var7.c.b())));
         var11 = var10.R();
         var7.a.a(var7.p, var7.q, var7.r, var7.v, var7.w);
-        var7.a.a((ff) (new hv(var11)));
-        var7.a.a((ff) (new hp(var7.bM, var7.bL, var7.bK)));
+        var7.a.a((fg) (new hw(var11)));
+        var7.a.a((fg) (new hq(var7.bN, var7.bM, var7.bL)));
         this.b(var7, var10);
         this.f(var7);
         var10.w().a(var7);
@@ -479,12 +479,12 @@ public abstract class mm {
         this.i.add(var7);
         this.j.put(var7.bc(), var7);
         var7.j_();
-        var7.c(var7.bQ());
+        var7.c(var7.bR());
         return var7;
     }
 
-    public void f(lr var1) {
-        GameProfile var2 = var1.cK();
+    public void f(ls var1) {
+        GameProfile var2 = var1.cL();
         int var3 = this.h(var2) ? this.m.a(var2) : 0;
 
         var3 = this.h.R() && this.h.d[0].T().u() ? 4 : var3;
@@ -492,14 +492,14 @@ public abstract class mm {
         this.b(var1, var3);
     }
 
-    public void a(lr var1, int var2) {
+    public void a(ls var1, int var2) {
         int var3 = var1.am;
-        lp var4 = this.h.a(var1.am);
+        lq var4 = this.h.a(var1.am);
 
         var1.am = var2;
-        lp var5 = this.h.a(var1.am);
+        lq var5 = this.h.a(var1.am);
 
-        var1.a.a((ff) (new hf(var1.am, var1.l.ae(), var1.l.T().t(), var1.c.b())));
+        var1.a.a((fg) (new hg(var1.am, var1.l.ae(), var1.l.T().t(), var1.c.b())));
         this.f(var1);
         var4.f(var1);
         var1.F = false;
@@ -507,20 +507,20 @@ public abstract class mm {
         this.a(var1, var4);
         var1.a.a(var1.p, var1.q, var1.r, var1.v, var1.w);
         var1.c.a(var5);
-        var1.a.a((ff) (new gx(var1.bJ)));
+        var1.a.a((fg) (new gy(var1.bK)));
         this.b(var1, var5);
         this.g(var1);
-        Iterator var6 = var1.bO().iterator();
+        Iterator var6 = var1.bP().iterator();
 
         while (var6.hasNext()) {
             rl var7 = (rl) var6.next();
 
-            var1.a.a((ff) (new ie(var1.O(), var7)));
+            var1.a.a((fg) (new ig(var1.O(), var7)));
         }
 
     }
 
-    public void a(rr var1, int var2, lp var3, lp var4) {
+    public void a(rr var1, int var2, lq var3, lq var4) {
         double var5 = var1.p;
         double var7 = var1.r;
         double var9 = 8.0D;
@@ -542,7 +542,7 @@ public abstract class mm {
                 var3.a(var1, false);
             }
         } else {
-            cj var12;
+            ck var12;
 
             if (var2 == 1) {
                 var12 = var4.R();
@@ -579,22 +579,22 @@ public abstract class mm {
 
     public void e() {
         if (++this.u > 600) {
-            this.a((ff) (new gz(gz.a.c, this.i)));
+            this.a((fg) (new ha(ha.a.c, this.i)));
             this.u = 0;
         }
 
     }
 
-    public void a(ff<?> var1) {
+    public void a(fg<?> var1) {
         for (int var2 = 0; var2 < this.i.size(); ++var2) {
-            ((lr) this.i.get(var2)).a.a(var1);
+            ((ls) this.i.get(var2)).a.a(var1);
         }
 
     }
 
-    public void a(ff<?> var1, int var2) {
+    public void a(fg<?> var1, int var2) {
         for (int var3 = 0; var3 < this.i.size(); ++var3) {
-            lr var4 = (lr) this.i.get(var3);
+            ls var4 = (ls) this.i.get(var3);
 
             if (var4.am == var2) {
                 var4.a.a(var1);
@@ -603,7 +603,7 @@ public abstract class mm {
 
     }
 
-    public void a(zj var1, eu var2) {
+    public void a(zj var1, ev var2) {
         bbo var3 = var1.aO();
 
         if (var3 != null) {
@@ -612,7 +612,7 @@ public abstract class mm {
 
             while (var5.hasNext()) {
                 String var6 = (String) var5.next();
-                lr var7 = this.a(var6);
+                ls var7 = this.a(var6);
 
                 if (var7 != null && var7 != var1) {
                     var7.a(var2);
@@ -622,14 +622,14 @@ public abstract class mm {
         }
     }
 
-    public void b(zj var1, eu var2) {
+    public void b(zj var1, ev var2) {
         bbo var3 = var1.aO();
 
         if (var3 == null) {
             this.a(var2);
         } else {
             for (int var4 = 0; var4 < this.i.size(); ++var4) {
-                lr var5 = (lr) this.i.get(var4);
+                ls var5 = (ls) this.i.get(var4);
 
                 if (var5.aO() != var3) {
                     var5.a(var2);
@@ -648,9 +648,9 @@ public abstract class mm {
                 var2 = var2 + ", ";
             }
 
-            var2 = var2 + ((lr) var3.get(var4)).h_();
+            var2 = var2 + ((ls) var3.get(var4)).h_();
             if (var1) {
-                var2 = var2 + " (" + ((lr) var3.get(var4)).bc().toString() + ")";
+                var2 = var2 + " (" + ((ls) var3.get(var4)).bd() + ")";
             }
         }
 
@@ -661,7 +661,7 @@ public abstract class mm {
         String[] var1 = new String[this.i.size()];
 
         for (int var2 = 0; var2 < this.i.size(); ++var2) {
-            var1[var2] = ((lr) this.i.get(var2)).h_();
+            var1[var2] = ((ls) this.i.get(var2)).h_();
         }
 
         return var1;
@@ -671,24 +671,24 @@ public abstract class mm {
         GameProfile[] var1 = new GameProfile[this.i.size()];
 
         for (int var2 = 0; var2 < this.i.size(); ++var2) {
-            var1[var2] = ((lr) this.i.get(var2)).cK();
+            var1[var2] = ((ls) this.i.get(var2)).cL();
         }
 
         return var1;
     }
 
-    public mr h() {
+    public ms h() {
         return this.k;
     }
 
-    public mj i() {
+    public mk i() {
         return this.l;
     }
 
     public void a(GameProfile var1) {
         int var2 = this.h.q();
 
-        ((mq) this.m).a((mp) (new mo(var1, this.h.q(), this.m.b(var1)))); // VanillaIRC -- obfuscation anomaly: cast this.m to mq
+        ((mr) this.m).a((mq) (new mp(var1, this.h.q(), this.m.b(var1)))); // VanillaIRC -- obfuscation anomaly: cast this.m to mr
         this.b(this.a(var1.getId()), var2);
     }
 
@@ -697,7 +697,7 @@ public abstract class mm {
         this.b(this.a(var1.getId()), 0);
     }
 
-    private void b(lr var1, int var2) {
+    private void b(ls var1, int var2) {
         if (var1 != null && var1.a != null) {
             byte var3;
 
@@ -709,7 +709,7 @@ public abstract class mm {
                 var3 = (byte) (24 + var2);
             }
 
-            var1.a.a((ff) (new gk(var1, var3)));
+            var1.a.a((fg) (new gl(var1, var3)));
         }
 
     }
@@ -723,25 +723,25 @@ public abstract class mm {
     }
 
     @Nullable
-    public lr a(String var1) {
+    public ls a(String var1) {
         Iterator var2 = this.i.iterator();
 
-        lr var3;
+        ls var3;
 
         do {
             if (!var2.hasNext()) {
                 return null;
             }
 
-            var3 = (lr) var2.next();
+            var3 = (ls) var2.next();
         } while (!var3.h_().equalsIgnoreCase(var1));
 
         return var3;
     }
 
-    public void a(@Nullable zj var1, double var2, double var4, double var6, double var8, int var10, ff<?> var11) {
+    public void a(@Nullable zj var1, double var2, double var4, double var6, double var8, int var10, fg<?> var11) {
         for (int var12 = 0; var12 < this.i.size(); ++var12) {
-            lr var13 = (lr) this.i.get(var12);
+            ls var13 = (ls) this.i.get(var12);
 
             if (var13 != var1 && var13.am == var10) {
                 double var14 = var2 - var13.p;
@@ -758,20 +758,20 @@ public abstract class mm {
 
     public void j() {
         for (int var1 = 0; var1 < this.i.size(); ++var1) {
-            this.b((lr) this.i.get(var1));
+            this.b((ls) this.i.get(var1));
         }
 
     }
 
     public void d(GameProfile var1) {
-        ((mq) this.n).a((mp) (new mu(var1))); // VanillaIRC -- obfuscation anomaly: cast this.m to mq
+        ((mr) this.n).a((mq) (new mv(var1))); // VanillaIRC -- obfuscation anomaly: cast this.m to mr
     }
 
     public void c(GameProfile var1) {
         this.n.c(var1);
     }
 
-    public mt k() {
+    public mu k() {
         return this.n;
     }
 
@@ -779,7 +779,7 @@ public abstract class mm {
         return this.n.a();
     }
 
-    public mn m() {
+    public mo m() {
         return this.m;
     }
 
@@ -789,23 +789,23 @@ public abstract class mm {
 
     public void a() {}
 
-    public void b(lr var1, lp var2) {
+    public void b(ls var1, lq var2) {
         arv var3 = this.h.d[0].aj();
 
-        var1.a.a((ff) (new hh(var3, hh.a.d)));
-        var1.a.a((ff) (new hw(var2.P(), var2.Q(), var2.U().b("doDaylightCycle"))));
+        var1.a.a((fg) (new hi(var3, hi.a.d)));
+        var1.a.a((fg) (new hx(var2.P(), var2.Q(), var2.U().b("doDaylightCycle"))));
         if (var2.W()) {
-            var1.a.a((ff) (new gn(1, 0.0F)));
-            var1.a.a((ff) (new gn(7, var2.j(1.0F))));
-            var1.a.a((ff) (new gn(8, var2.h(1.0F))));
+            var1.a.a((fg) (new go(1, 0.0F)));
+            var1.a.a((fg) (new go(7, var2.j(1.0F))));
+            var1.a.a((fg) (new go(8, var2.h(1.0F))));
         }
 
     }
 
-    public void g(lr var1) {
-        var1.a(var1.bs);
+    public void g(ls var1) {
+        var1.a(var1.bt);
         var1.u();
-        var1.a.a((ff) (new hj(var1.br.d)));
+        var1.a.a((fg) (new hk(var1.bs.d)));
     }
 
     public int o() {
@@ -828,12 +828,12 @@ public abstract class mm {
         this.q = var1;
     }
 
-    public List<lr> b(String var1) {
+    public List<ls> b(String var1) {
         ArrayList var2 = Lists.newArrayList();
         Iterator var3 = this.i.iterator();
 
         while (var3.hasNext()) {
-            lr var4 = (lr) var3.next();
+            ls var4 = (ls) var3.next();
 
             if (var4.A().equals(var1)) {
                 var2.add(var4);
@@ -851,11 +851,11 @@ public abstract class mm {
         return this.h;
     }
 
-    public dn t() {
+    public dp t() {
         return null;
     }
 
-    private void a(lr var1, lr var2, aht var3) {
+    private void a(ls var1, ls var2, aht var3) {
         if (var2 != null) {
             var1.c.a(var2.c.b());
         } else if (this.s != null) {
@@ -867,13 +867,13 @@ public abstract class mm {
 
     public void u() {
         for (int var1 = 0; var1 < this.i.size(); ++var1) {
-            ((lr) this.i.get(var1)).a.c("Server closed");
+            ((ls) this.i.get(var1)).a.c("Server closed");
         }
 
     }
 
     // VanillaIRC start -- redirect for chat injection
-    public void a(eu var1, boolean var2) {
+    public void a(ev var1, boolean var2) {
         this.sendMessageToPlayers(var1, var2);
         
         String translated = var1.c();
@@ -883,24 +883,24 @@ public abstract class mm {
         }
     }
     
-    public void sendMessageToPlayers(eu var1, boolean var2) {
+    public void sendMessageToPlayers(ev var1, boolean var2) {
         this.h.a(var1);
         int var3 = var2 ? 1 : 0;
 
-        this.a((ff) (new fy(var1, (byte) var3)));
+        this.a((fg) (new fz(var1, (byte) var3)));
     }
 
     public void sendFromJson(String json) {
-        this.sendMessageToPlayers(eu.a.a(json), false);
+        this.sendMessageToPlayers(ev.a.a(json), false);
     } // VanillaIRC end
 
-    public void a(eu var1) {
+    public void a(ev var1) {
         this.a(var1, true);
     }
 
-    public no a(zj var1) {
+    public np a(zj var1) {
         UUID var2 = var1.bc();
-        no var3 = var2 == null ? null : (no) this.o.get(var2);
+        np var3 = var2 == null ? null : (np) this.o.get(var2);
 
         if (var3 == null) {
             File var4 = new File(this.h.a(0).S().b(), "stats");
@@ -914,7 +914,7 @@ public abstract class mm {
                 }
             }
 
-            var3 = new no(this.h, var5);
+            var3 = new np(this.h, var5);
             var3.a();
             this.o.put(var2, var3);
         }
@@ -925,11 +925,11 @@ public abstract class mm {
     public void a(int var1) {
         this.r = var1;
         if (this.h.d != null) {
-            lp[] var2 = this.h.d;
+            lq[] var2 = this.h.d;
             int var3 = var2.length;
 
             for (int var4 = 0; var4 < var3; ++var4) {
-                lp var5 = var2[var4];
+                lq var5 = var2[var4];
 
                 if (var5 != null) {
                     var5.w().a(var1);
@@ -940,12 +940,12 @@ public abstract class mm {
         }
     }
 
-    public List<lr> v() {
+    public List<ls> v() {
         return this.i;
     }
 
-    public lr a(UUID var1) {
-        return (lr) this.j.get(var1);
+    public ls a(UUID var1) {
+        return (ls) this.j.get(var1);
     }
 
     public boolean f(GameProfile var1) {
